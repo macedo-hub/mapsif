@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "br.com.example.mapsif"
-        minSdk = 21
+        minSdk = 26
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"

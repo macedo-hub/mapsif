@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/background_fundo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp"
+        tools:context=".SobreActivity">
+
+        <!-- Faixa Superior -->
+        <FrameLayout
+            android:id="@+id/faixaSuperior"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="#bde4a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sobre o MapsIF"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintWidth_percent="0.4"
+            app:srcCompat="@drawable/logo_mapsif"
+            tools:src="@android:drawable/ic_menu_report_image"
+            app:layout_constraintTop_toBottomOf="@id/faixaSuperior"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Descrição -->
+        <TextView
+            android:id="@+id/tvDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="O MapsIF é um guia interativo do campus IFPB Santa Luzia. Explore os ambientes dos blocos A e B através de fotos e visualizações 360°."
+            android:textColor="#4A4A4A"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Título Desenvolvedores -->
+        <TextView
+            android:id="@+id/tvTituloDesenvolvedores"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Desenvolvedores"
+            android:textColor="#1E5E1A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvDescricao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- CARD 1: Lucas Emanuel -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardLucas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloDesenvolvedores"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/imgFotoLucas"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/lucas_sb"
+                tools:src="@tools:sample/avatars"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNomeLucas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Lucas Emanuel"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imgFotoLucas"
+                app:layout_constraintTop_toTopOf="@id/imgFotoLucas"
+                app:layout_constraintEnd_toStartOf="@id/btnGithubLucas" />
+
+            <TextView
+                android:id="@+id/tvCargoLucas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Desenvolvedor"
+                android:textColor="#757575"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvNomeLucas"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeLucas"
+                app:layout_constraintEnd_toEndOf="@id/tvNomeLucas" />
+
+            <!-- LinkedIn Lucas -->
+            <ImageView
+                android:id="@+id/btnLinkedinLucas"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_linkedin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- GitHub Lucas -->
+            <ImageView
+                android:id="@+id/btnGithubLucas"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_github"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnLinkedinLucas"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- CARD 2: Iasmim Anahí -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardIasmim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintTop_toBottomOf="@id/cardLucas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/imgFotoIasmim"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/iasmim_sobre"
+                tools:src="@tools:sample/avatars"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNomeIasmim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Iasmim Anahí"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imgFotoIasmim"
+                app:layout_constraintTop_toTopOf="@id/imgFotoIasmim"
+                app:layout_constraintEnd_toStartOf="@id/btnGithubIasmim" />
+
+            <TextView
+                android:id="@+id/tvCargoIasmim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Desenvolvedora"
+                android:textColor="#757575"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvNomeIasmim"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeIasmim"
+                app:layout_constraintEnd_toEndOf="@id/tvNomeIasmim" />
+
+            <!-- LinkedIn Iasmim -->
+            <ImageView
+                android:id="@+id/btnLinkedinIasmim"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_linkedin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- GitHub Iasmim -->
+            <ImageView
+                android:id="@+id/btnGithubIasmim"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_github"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnLinkedinIasmim"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Título Orientador -->
+        <TextView
+            android:id="@+id/tvTituloOrientador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Professor Orientador"
+            android:textColor="#1E5E1A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardIasmim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- CARD 3: Professor Orientador -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardOrientador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloOrientador"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/imgFotoOrientador"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/alexandre_sobre"
+                tools:src="@tools:sample/avatars"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNomeOrientador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Dr. Alexandre Costa"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imgFotoOrientador"
+                app:layout_constraintTop_toTopOf="@id/imgFotoOrientador"
+                app:layout_constraintEnd_toStartOf="@id/btnGithubOrientador" />
+
+            <TextView
+                android:id="@+id/tvCargoOrientador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Orientador de Projeto"
+                android:textColor="#757575"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvNomeOrientador"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
+                app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
+
+            <!-- LinkedIn Orientador -->
+            <ImageView
+                android:id="@+id/btnLinkedinOrientador"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_linkedin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- GitHub Orientador -->
+            <ImageView
+                android:id="@+id/btnGithubOrientador"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_github"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnLinkedinOrientador"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- BOTÃO/CARD: Repositório do Projeto no GitHub -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardGithubProjeto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintTop_toBottomOf="@id/cardOrientador"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- GitHub Ícone Projeto -->
+            <ImageView
+                android:id="@+id/imgGithubProjeto"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/ic_github"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvGithubProjeto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="MapsIF no GitHub"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgGithubProjeto"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Fontes e Referências -->
+        <TextView
+            android:id="@+id/tvFontesReferencias"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:text="Fontes e Referências:\nPannellum • WebViewer 360"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/cardGithubProjeto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
