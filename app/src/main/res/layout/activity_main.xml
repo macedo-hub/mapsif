@@ -5,17 +5,255 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_fundo"
     tools:context=".MainActivity">
 
+    <!-- Imagem de fundo -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_maps_if"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Sobreposição escura (scrim) -->
+
+    <!-- Botão de menu (esquerda) -->
+    <View
+        android:id="@+id/scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#55000000"
+        app:layout_constraintBottom_toBottomOf="@id/backgroundImage"
+        app:layout_constraintEnd_toEndOf="@id/backgroundImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/backgroundImage"
+        app:layout_constraintTop_toTopOf="@id/backgroundImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="☰"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#66FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botão Sobre (direita) com ícone de informação -->
     <Button
         android:id="@+id/sobreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="sobre"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="4dp"
+        android:text="Sobre"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#66FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logotipo centralizado entre os botões -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_logo_maps_if"
+        android:contentDescription="Logo do Maps IF"
+        app:layout_constraintStart_toEndOf="@id/menuButton"
+        app:layout_constraintEnd_toStartOf="@id/sobreButton"
+        app:layout_constraintTop_toTopOf="@id/menuButton"
+        app:layout_constraintBottom_toBottomOf="@id/menuButton" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Guia de Ambientes"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Navegue pelos blocos do campus IFPB Santa Luzia explore laboratórios, biblioteca e muito mais."
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <!-- Card da Coluna A -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/columnA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/columnB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <View
+                android:id="@+id/indicatorA"
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:background="@color/dark_green"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/columnATitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Bloco A"
+                android:textColor="@color/dark_green"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/indicatorA"
+                app:layout_constraintStart_toEndOf="@id/indicatorA"
+                app:layout_constraintTop_toTopOf="@id/indicatorA" />
+
+            <Button
+                android:id="@+id/columnAPrimeiroAndar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1º Andar"
+                android:background="@drawable/button_rounded"
+                app:backgroundTint="@color/dark_green"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/columnATitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/columnATerreo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Térreo"
+                android:background="@drawable/button_rounded"
+                app:backgroundTint="@color/dark_green"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Card da Coluna B -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/columnB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/columnA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="22dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <View
+                android:id="@+id/indicatorB"
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:background="@color/dark_green"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/columnBTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Bloco B"
+                android:textColor="@color/dark_green"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/indicatorB"
+                app:layout_constraintStart_toEndOf="@id/indicatorB"
+                app:layout_constraintTop_toTopOf="@id/indicatorB" />
+
+            <Button
+                android:id="@+id/columnBPrimeiroAndar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1º Andar"
+                android:background="@drawable/button_rounded"
+                app:backgroundTint="@color/dark_green"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/columnBTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/columnBTerreo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Térreo"
+                android:background="@drawable/button_rounded"
+                app:backgroundTint="@color/dark_green"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
