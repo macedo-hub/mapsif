@@ -16,42 +16,42 @@
         tools:context=".SobreActivity">
 
 <!-- Cabeçalho -->
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/headerContainer"
-    android:layout_width="0dp"
-    android:layout_height="56dp"
-    android:layout_marginTop="16dp"
-    android:background="@color/pastel_green"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/pastel_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Botão de voltar -->
-    <ImageButton
-        android:id="@+id/btnVoltar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="12dp"
-        android:background="@drawable/circle_outline"
-        android:src="@drawable/ic_back"
-        app:tint="@color/primary_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Botão de voltar -->
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/circle_outline"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/primary_green" />
 
-<!-- Título -->
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sobre o MapsIF"
-        android:textColor="@color/primary_text"
-        android:textSize="20sp"
-        android:fontFamily="@font/poppins_semibold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnVoltar"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Sobre o MapsIF"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnVoltar"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Logo -->
 <ImageView
