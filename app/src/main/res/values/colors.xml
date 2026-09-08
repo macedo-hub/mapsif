@@ -3,4 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_green">#1B5E20</color>
+    <color name="pastel_green">#E1F0DE</color>
+    <color name="primary_green">#3C8C43</color>
+    <color name="card_background">#F6FBF5</color>
+    <color name="card_border">#D6EAD3</color>
+    <color name="primary_text">#222222</color>
+    <color name="secondary_text">#757575</color>
 </resources>

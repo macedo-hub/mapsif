@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,12 @@ public class SobreActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Botão de voltar
+        ImageButton btnVoltar = findViewById(R.id.btnVoltar);
+        if (btnVoltar != null) {
+            btnVoltar.setOnClickListener(v -> finish());
+        }
 
         // --- LUCAS EMANUEL ---
         abrirLink(R.id.btnGithubLucas, "https://github.com/macedo-hub");
