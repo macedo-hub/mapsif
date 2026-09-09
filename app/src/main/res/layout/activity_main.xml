@@ -260,5 +260,4 @@ android:id="@+id/columnBTerreo"
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
- 
+</androidx.constraintlayout.widget.ConstraintLayout>
