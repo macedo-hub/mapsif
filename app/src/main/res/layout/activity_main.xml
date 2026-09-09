@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_maps_if"
+        android:src="@drawable/main_bg_mapsif"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,11 +37,11 @@
     <ImageButton
         android:id="@+id/menuButton"
         android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_menu"
-        android:background="@drawable/button_rounded"
+android:layout_height="48dp"
+         android:layout_marginStart="16dp"
+         android:layout_marginTop="16dp"
+         android:src="@drawable/main_ic_menu"
+         android:background="@drawable/main_btn_arredondado"
         android:contentDescription="Botão de menu lateral"
         android:textSize="24sp"
         android:textColor="@android:color/white"
@@ -55,28 +55,28 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="#33FFFFFF"
-        android:contentDescription="Botão de sobre"
-        android:drawablePadding="4dp"
-        android:src="@drawable/ic_info"
-        android:textColor="@android:color/white"
+android:layout_marginEnd="16dp"
+         android:background="@drawable/main_btn_arredondado"
+         android:backgroundTint="#33FFFFFF"
+         android:contentDescription="Botão de sobre"
+         android:drawablePadding="4dp"
+         android:src="@drawable/main_ic_info"
+         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Logotipo centralizado entre os botões -->
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_logo_maps_if"
-        android:contentDescription="Logo do Maps IF"
-        app:layout_constraintStart_toEndOf="@id/menuButton"
-        app:layout_constraintEnd_toStartOf="@id/sobreButton"
-        app:layout_constraintTop_toTopOf="@id/menuButton"
-        app:layout_constraintBottom_toBottomOf="@id/menuButton" />
+<ImageView
+         android:id="@+id/logoImageView"
+         android:layout_width="0dp"
+         android:layout_height="38dp"
+         android:scaleType="fitCenter"
+         android:src="@drawable/main_ic_logo_maps_if"
+         android:contentDescription="Logo do Maps IF"
+         app:layout_constraintStart_toEndOf="@id/menuButton"
+         app:layout_constraintEnd_toStartOf="@id/sobreButton"
+         app:layout_constraintTop_toTopOf="@id/menuButton"
+         app:layout_constraintBottom_toBottomOf="@id/menuButton" />
 
     <!-- Título -->
     <TextView
@@ -162,12 +162,12 @@
                 app:layout_constraintTop_toTopOf="@id/indicatorA" />
 
             <Button
-                android:id="@+id/columnAPrimeiroAndar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="1º Andar"
-                android:background="@drawable/button_rounded"
-                app:backgroundTint="@color/dark_green"
+android:id="@+id/columnAPrimeiroAndar"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="1º Andar"
+                  android:background="@drawable/main_btn_pisos"
+                  app:backgroundTint="@color/dark_green"
                 android:textColor="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@id/columnATitle"
                 app:layout_constraintStart_toStartOf="parent"
@@ -175,12 +175,12 @@
                 android:layout_marginTop="8dp" />
 
             <Button
-                android:id="@+id/columnATerreo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Térreo"
-                android:background="@drawable/button_rounded"
-                app:backgroundTint="@color/dark_green"
+android:id="@+id/columnATerreo"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="Térreo"
+                  android:background="@drawable/main_btn_pisos"
+                  app:backgroundTint="@color/dark_green"
                 android:textColor="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
                 app:layout_constraintStart_toStartOf="parent"
@@ -233,12 +233,12 @@
                 app:layout_constraintTop_toTopOf="@id/indicatorB" />
 
             <Button
-                android:id="@+id/columnBPrimeiroAndar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="1º Andar"
-                android:background="@drawable/button_rounded"
-                app:backgroundTint="@color/dark_green"
+android:id="@+id/columnBPrimeiroAndar"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="1º Andar"
+                  android:background="@drawable/main_btn_pisos"
+                  app:backgroundTint="@color/dark_green"
                 android:textColor="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@id/columnBTitle"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,12 +246,12 @@
                 android:layout_marginTop="8dp" />
 
             <Button
-                android:id="@+id/columnBTerreo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Térreo"
-                android:background="@drawable/button_rounded"
-                app:backgroundTint="@color/dark_green"
+android:id="@+id/columnBTerreo"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="Térreo"
+                  android:background="@drawable/main_btn_pisos"
+                  app:backgroundTint="@color/dark_green"
                 android:textColor="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
                 app:layout_constraintStart_toStartOf="parent"

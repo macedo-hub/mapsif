@@ -30,9 +30,9 @@
                 android:id="@+id/btnVoltar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle_outline"
-                android:src="@drawable/ic_back"
+android:layout_marginStart="12dp"
+                 android:background="@drawable/sobre_btn_circular_contorno"
+                 android:src="@drawable/sobre_ic_voltar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -61,7 +61,7 @@
     android:layout_marginTop="24dp"
     android:adjustViewBounds="true"
     app:layout_constraintWidth_percent="0.4"
-    app:srcCompat="@drawable/logo_mapsif"
+    app:srcCompat="@drawable/geral_logo_mapsif"
     tools:src="@android:drawable/ic_menu_report_image"
     app:layout_constraintTop_toBottomOf="@id/headerContainer"
     app:layout_constraintStart_toStartOf="parent"
@@ -107,9 +107,9 @@
             android:layout_marginTop="12dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:padding="12dp"
-            android:background="@drawable/bg_card"
-            app:layout_constraintTop_toBottomOf="@id/tvTituloDesenvolvedores"
+android:padding="12dp"
+             android:background="@drawable/geral_bg_card"
+             app:layout_constraintTop_toBottomOf="@id/tvTituloDesenvolvedores"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -117,9 +117,9 @@
                 android:id="@+id/imgFotoLucas"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/lucas_sb"
-                tools:src="@tools:sample/avatars"
+android:scaleType="centerCrop"
+                 app:srcCompat="@drawable/sobre_foto_lucas"
+                 tools:src="@tools:sample/avatars"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -150,28 +150,28 @@
     app:layout_constraintTop_toBottomOf="@id/tvNomeLucas"
     app:layout_constraintEnd_toEndOf="@id/tvNomeLucas" />
 
-            <!-- LinkedIn Lucas -->
-            <ImageView
-                android:id="@+id/btnLinkedinLucas"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_linkedin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!-- LinkedIn Lucas -->
+             <ImageView
+                 android:id="@+id/btnLinkedinLucas"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_linkedin"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
 
             <!-- GitHub Lucas -->
-            <ImageView
-                android:id="@+id/btnGithubLucas"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="8dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_github"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnLinkedinLucas"
-                app:layout_constraintTop_toTopOf="parent" />
+<ImageView
+                 android:id="@+id/btnGithubLucas"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:layout_marginEnd="8dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_github"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/btnLinkedinLucas"
+                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -183,9 +183,9 @@
             android:layout_marginTop="12dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:padding="12dp"
-            android:background="@drawable/bg_card"
-            app:layout_constraintTop_toBottomOf="@id/cardLucas"
+android:padding="12dp"
+             android:background="@drawable/geral_bg_card"
+             app:layout_constraintTop_toBottomOf="@id/cardLucas"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -193,9 +193,9 @@
                 android:id="@+id/imgFotoIasmim"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/iasmim_sobre"
-                tools:src="@tools:sample/avatars"
+android:scaleType="centerCrop"
+                 app:srcCompat="@drawable/sobre_foto_iasmim"
+                 tools:src="@tools:sample/avatars"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -226,28 +226,28 @@
     app:layout_constraintTop_toBottomOf="@id/tvNomeIasmim"
     app:layout_constraintEnd_toEndOf="@id/tvNomeIasmim" />
 
-            <!-- LinkedIn Iasmim -->
-            <ImageView
-                android:id="@+id/btnLinkedinIasmim"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_linkedin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!-- LinkedIn Iasmim -->
+             <ImageView
+                 android:id="@+id/btnLinkedinIasmim"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_linkedin"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- GitHub Iasmim -->
-            <ImageView
-                android:id="@+id/btnGithubIasmim"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="8dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_github"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnLinkedinIasmim"
-                app:layout_constraintTop_toTopOf="parent" />
+<!-- GitHub Iasmim -->
+             <ImageView
+                 android:id="@+id/btnGithubIasmim"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:layout_marginEnd="8dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_github"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/btnLinkedinIasmim"
+                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!-- Título Orientador -->
@@ -274,9 +274,9 @@
             android:layout_marginTop="12dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:padding="12dp"
-            android:background="@drawable/bg_card"
-            app:layout_constraintTop_toBottomOf="@id/tvTituloOrientador"
+android:padding="12dp"
+             android:background="@drawable/geral_bg_card"
+             app:layout_constraintTop_toBottomOf="@id/tvTituloOrientador"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -284,9 +284,9 @@
                 android:id="@+id/imgFotoOrientador"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/alexandre_sobre"
-                tools:src="@tools:sample/avatars"
+android:scaleType="centerCrop"
+                 app:srcCompat="@drawable/sobre_foto_alexandre"
+                 tools:src="@tools:sample/avatars"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -317,28 +317,28 @@
     app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
     app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
 
-            <!-- LinkedIn Orientador -->
-            <ImageView
-                android:id="@+id/btnLinkedinOrientador"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_linkedin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!-- LinkedIn Orientador -->
+             <ImageView
+                 android:id="@+id/btnLinkedinOrientador"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_linkedin"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- GitHub Orientador -->
-            <ImageView
-                android:id="@+id/btnGithubOrientador"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="8dp"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_github"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnLinkedinOrientador"
-                app:layout_constraintTop_toTopOf="parent" />
+<!-- GitHub Orientador -->
+             <ImageView
+                 android:id="@+id/btnGithubOrientador"
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:layout_marginEnd="8dp"
+                 android:padding="2dp"
+                 app:srcCompat="@drawable/sobre_ic_github"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/btnLinkedinOrientador"
+                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!-- BOTÃO/CARD: Repositório do Projeto no GitHub -->
@@ -349,25 +349,25 @@
     android:layout_marginTop="16dp"
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp"
-    android:paddingTop="6dp"
-    android:paddingBottom="6dp"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:background="@drawable/button_outline"
-    app:layout_constraintTop_toBottomOf="@id/cardOrientador"
+android:paddingTop="6dp"
+             android:paddingBottom="6dp"
+             android:paddingStart="16dp"
+             android:paddingEnd="16dp"
+             android:background="@drawable/sobre_btn_contorno"
+             app:layout_constraintTop_toBottomOf="@id/cardOrientador"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- GitHub Ícone Projeto -->
-    <ImageView
-        android:id="@+id/imgGithubProjeto"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/ic_github"
-        app:tint="@color/primary_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!-- GitHub Ícone Projeto -->
+     <ImageView
+         android:id="@+id/imgGithubProjeto"
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         app:srcCompat="@drawable/sobre_ic_github"
+         app:tint="@color/primary_green"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
 
 <TextView
     android:id="@+id/tvGithubProjeto"
