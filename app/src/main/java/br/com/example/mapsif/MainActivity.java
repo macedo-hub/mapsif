@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button sobreButton = findViewById(R.id.sobreButton);
+        ImageButton sobreButton = findViewById(R.id.sobreButton);
         sobreButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SobreActivity.class);
             startActivity(intent);

@@ -34,30 +34,34 @@
         app:layout_constraintTop_toTopOf="@id/backgroundImage"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/menuButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="☰"
+        android:src="@drawable/ic_menu"
+        android:background="@drawable/button_rounded"
+        android:contentDescription="Botão de menu lateral"
         android:textSize="24sp"
         android:textColor="@android:color/white"
-        android:backgroundTint="#66FFFFFF"
+        android:backgroundTint="#33FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Botão Sobre (direita) com ícone de informação -->
-    <Button
+    <ImageButton
         android:id="@+id/sobreButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#33FFFFFF"
+        android:contentDescription="Botão de sobre"
         android:drawablePadding="4dp"
-        android:text="Sobre"
+        android:src="@drawable/ic_info"
         android:textColor="@android:color/white"
-        android:backgroundTint="#66FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,8 +84,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins"
         android:shadowColor="#000000"
         android:shadowDx="1"
