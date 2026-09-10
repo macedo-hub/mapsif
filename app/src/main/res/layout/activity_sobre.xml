@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/white">
+    android:background="@color/sobre_branco_fundo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -20,23 +20,24 @@
             android:id="@+id/headerContainer"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:background="@color/pastel_green"
+            android:background="@color/sobre_verde_claro_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <!-- Botão de voltar -->
-            <ImageButton
-                android:id="@+id/btnVoltar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-android:layout_marginStart="12dp"
+<ImageButton
+                 android:id="@+id/btnVoltar"
+                 android:layout_width="48dp"
+                 android:layout_height="48dp"
+                 android:layout_marginStart="12dp"
                  android:background="@drawable/sobre_btn_circular_contorno"
                  android:src="@drawable/sobre_ic_voltar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/primary_green" />
+                 android:contentDescription="Botão de voltar"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:tint="@color/sobre_verde_primario" />
 
             <!-- Título -->
             <TextView
@@ -46,7 +47,7 @@ android:layout_marginStart="12dp"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Sobre o MapsIF"
-                android:textColor="@color/primary_text"
+android:textColor="@color/sobre_texto_primario"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnVoltar"
@@ -85,19 +86,19 @@ android:layout_marginStart="12dp"
 
 <!-- Título Desenvolvedores -->
 <TextView
-    android:id="@+id/tvTituloDesenvolvedores"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:text="Desenvolvedores"
-    android:textColor="@color/primary_green"
-    android:textSize="16sp"
-    android:fontFamily="@font/poppins_semibold"
-    app:layout_constraintTop_toBottomOf="@id/tvDescricao"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+                 android:id="@+id/tvTituloDesenvolvedores"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="24dp"
+                 android:layout_marginStart="24dp"
+                 android:layout_marginEnd="24dp"
+                 android:text="Desenvolvedores"
+                 android:textColor="@color/sobre_verde_primario"
+                 android:textSize="16sp"
+                 android:fontFamily="@font/poppins_semibold"
+                 app:layout_constraintTop_toBottomOf="@id/tvDescricao"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- CARD 1: Lucas Emanuel -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -125,30 +126,30 @@ android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent" />
 
 <TextView
-    android:id="@+id/tvNomeLucas"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="8dp"
-    android:text="Lucas Emanuel"
-    android:textColor="@color/primary_text"
-    android:textSize="15sp"
-    android:fontFamily="@font/poppins_semibold"
-    app:layout_constraintStart_toEndOf="@id/imgFotoLucas"
-    app:layout_constraintTop_toTopOf="@id/imgFotoLucas"
-    app:layout_constraintEnd_toStartOf="@id/btnGithubLucas" />
+                 android:id="@+id/tvNomeLucas"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="12dp"
+                 android:layout_marginEnd="8dp"
+                 android:text="Lucas Emanuel"
+                 android:textColor="@color/sobre_texto_primario"
+                 android:textSize="15sp"
+                 android:fontFamily="@font/poppins_semibold"
+                 app:layout_constraintStart_toEndOf="@id/imgFotoLucas"
+                 app:layout_constraintTop_toTopOf="@id/imgFotoLucas"
+                 app:layout_constraintEnd_toStartOf="@id/btnGithubLucas" />
 
 <TextView
-    android:id="@+id/tvCargoLucas"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Desenvolvedor"
-    android:textColor="@color/secondary_text"
-    android:textSize="12sp"
-    android:fontFamily="@font/poppins"
-    app:layout_constraintStart_toStartOf="@id/tvNomeLucas"
-    app:layout_constraintTop_toBottomOf="@id/tvNomeLucas"
-    app:layout_constraintEnd_toEndOf="@id/tvNomeLucas" />
+                 android:id="@+id/tvCargoLucas"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:text="Desenvolvedor"
+                 android:textColor="@color/sobre_texto_secundario"
+                 android:textSize="12sp"
+                 android:fontFamily="@font/poppins"
+                 app:layout_constraintStart_toStartOf="@id/tvNomeLucas"
+                 app:layout_constraintTop_toBottomOf="@id/tvNomeLucas"
+                 app:layout_constraintEnd_toEndOf="@id/tvNomeLucas" />
 
 <!-- LinkedIn Lucas -->
              <ImageView
@@ -189,42 +190,42 @@ android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/imgFotoIasmim"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-android:scaleType="centerCrop"
-                 app:srcCompat="@drawable/sobre_foto_iasmim"
-                 tools:src="@tools:sample/avatars"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<ImageView
+                 android:id="@+id/imgFotoIasmim"
+                 android:layout_width="44dp"
+                 android:layout_height="44dp"
+                 android:scaleType="centerCrop"
+                  app:srcCompat="@drawable/sobre_foto_iasmim"
+                  tools:src="@tools:sample/avatars"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
+
+ <TextView
+                 android:id="@+id/tvNomeIasmim"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="12dp"
+                 android:layout_marginEnd="8dp"
+                 android:text="Iasmim Anahí"
+                 android:textColor="@color/sobre_texto_primario"
+                 android:textSize="15sp"
+                 android:fontFamily="@font/poppins_semibold"
+                 app:layout_constraintStart_toEndOf="@id/imgFotoIasmim"
+                 app:layout_constraintTop_toTopOf="@id/imgFotoIasmim"
+                 app:layout_constraintEnd_toStartOf="@id/btnGithubIasmim" />
 
 <TextView
-    android:id="@+id/tvNomeIasmim"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="8dp"
-    android:text="Iasmim Anahí"
-    android:textColor="@color/primary_text"
-    android:textSize="15sp"
-    android:fontFamily="@font/poppins_semibold"
-    app:layout_constraintStart_toEndOf="@id/imgFotoIasmim"
-    app:layout_constraintTop_toTopOf="@id/imgFotoIasmim"
-    app:layout_constraintEnd_toStartOf="@id/btnGithubIasmim" />
-
-<TextView
-    android:id="@+id/tvCargoIasmim"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Desenvolvedora"
-    android:textColor="@color/secondary_text"
-    android:textSize="12sp"
-    android:fontFamily="@font/poppins"
-    app:layout_constraintStart_toStartOf="@id/tvNomeIasmim"
-    app:layout_constraintTop_toBottomOf="@id/tvNomeIasmim"
-    app:layout_constraintEnd_toEndOf="@id/tvNomeIasmim" />
+                 android:id="@+id/tvCargoIasmim"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:text="Desenvolvedora"
+                 android:textColor="@color/sobre_texto_secundario"
+                 android:textSize="12sp"
+                 android:fontFamily="@font/poppins"
+                 app:layout_constraintStart_toStartOf="@id/tvNomeIasmim"
+                 app:layout_constraintTop_toBottomOf="@id/tvNomeIasmim"
+                 app:layout_constraintEnd_toEndOf="@id/tvNomeIasmim" />
 
 <!-- LinkedIn Iasmim -->
              <ImageView
@@ -252,19 +253,19 @@ android:scaleType="centerCrop"
 
 <!-- Título Orientador -->
 <TextView
-    android:id="@+id/tvTituloOrientador"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:text="Professor Orientador"
-    android:textColor="@color/primary_green"
-    android:textSize="16sp"
-    android:fontFamily="@font/poppins_semibold"
-    app:layout_constraintTop_toBottomOf="@id/cardIasmim"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+                 android:id="@+id/tvTituloOrientador"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="24dp"
+                 android:layout_marginStart="24dp"
+                 android:layout_marginEnd="24dp"
+                 android:text="Professor Orientador"
+                 android:textColor="@color/sobre_verde_primario"
+                 android:textSize="16sp"
+                 android:fontFamily="@font/poppins_semibold"
+                 app:layout_constraintTop_toBottomOf="@id/cardIasmim"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- CARD 3: Professor Orientador -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -298,7 +299,7 @@ android:scaleType="centerCrop"
     android:layout_marginStart="12dp"
     android:layout_marginEnd="8dp"
     android:text="Dr. Alexandre Costa"
-    android:textColor="@color/primary_text"
+    android:textColor="@color/sobre_texto_primario"
     android:textSize="15sp"
     android:fontFamily="@font/poppins_semibold"
     app:layout_constraintStart_toEndOf="@id/imgFotoOrientador"
@@ -306,16 +307,16 @@ android:scaleType="centerCrop"
     app:layout_constraintEnd_toStartOf="@id/btnGithubOrientador" />
 
 <TextView
-    android:id="@+id/tvCargoOrientador"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Orientador de Projeto"
-    android:textColor="@color/secondary_text"
-    android:textSize="12sp"
-    android:fontFamily="@font/poppins"
-    app:layout_constraintStart_toStartOf="@id/tvNomeOrientador"
-    app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
-    app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
+                 android:id="@+id/tvCargoOrientador"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:text="Orientador de Projeto"
+                 android:textColor="@color/sobre_texto_secundario"
+                 android:textSize="12sp"
+                 android:fontFamily="@font/poppins"
+                 app:layout_constraintStart_toStartOf="@id/tvNomeOrientador"
+                 app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
+                 app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
 
 <!-- LinkedIn Orientador -->
              <ImageView
@@ -364,7 +365,7 @@ android:paddingTop="6dp"
          android:layout_width="20dp"
          android:layout_height="20dp"
          app:srcCompat="@drawable/sobre_ic_github"
-         app:tint="@color/primary_green"
+         app:tint="@color/sobre_verde_primario"
          app:layout_constraintBottom_toBottomOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent" />
@@ -375,7 +376,7 @@ android:paddingTop="6dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="12dp"
     android:text="MapsIF no GitHub"
-    android:textColor="@color/primary_green"
+    android:textColor="@color/sobre_verde_primario"
     android:textSize="14sp"
     android:fontFamily="@font/poppins_semibold"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -395,7 +396,7 @@ android:paddingTop="6dp"
     android:layout_marginEnd="24dp"
     android:gravity="center"
     android:text="Fontes e Referências:\nPannellum • WebViewer 360"
-    android:textColor="@color/secondary_text"
+    android:textColor="@color/sobre_texto_secundario"
     android:textSize="12sp"
     android:fontFamily="@font/poppins"
     app:layout_constraintTop_toBottomOf="@id/cardGithubProjeto"
@@ -404,5 +405,4 @@ android:paddingTop="6dp"
     app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView> 
- 
+</ScrollView>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="dark_green">#1B5E20</color>
-    <color name="pastel_green">#E1F0DE</color>
-    <color name="primary_green">#3C8C43</color>
-    <color name="card_background">#F6FBF5</color>
-    <color name="card_border">#D6EAD3</color>
-    <color name="primary_text">#222222</color>
-    <color name="secondary_text">#757575</color>
+    <!-- MainActivity colors -->
+    <color name="main_verde_escuro_indicador">#1B5E20</color>
+    <color name="main_verde_claro_fundo_card">#F6FBF5</color>
+    <color name="main_verde_borda_card">#D6EAD3</color>
+    <color name="main_texto_primario">#222222</color>
+    <color name="main_texto_secundario">#757575</color>
+    
+    <!-- SobreActivity colors -->
+    <color name="sobre_branco_fundo">#FFFFFFFF</color>
+    <color name="sobre_verde_claro_header">#E1F0DE</color>
+    <color name="sobre_verde_primario">#3C8C43</color>
+    <color name="sobre_texto_primario">#222222</color>
+    <color name="sobre_texto_secundario">#757575</color>
+    
+    <!-- Universal colors -->
+    <color name="cor_preta">#FF000000</color>
+    <color name="cor_branca">#FFFFFFFF</color>
 </resources>

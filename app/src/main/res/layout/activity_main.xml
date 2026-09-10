@@ -139,53 +139,53 @@ android:layout_marginEnd="16dp"
             android:layout_height="wrap_content"
             android:padding="12dp">
 
-            <View
-                android:id="@+id/indicatorA"
-                android:layout_width="4dp"
-                android:layout_height="16dp"
-                android:background="@color/dark_green"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+<View
+                 android:id="@+id/indicatorA"
+                 android:layout_width="4dp"
+                 android:layout_height="16dp"
+                 android:background="@color/main_verde_escuro_indicador"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/columnATitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Bloco A"
-                android:textColor="@color/dark_green"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/indicatorA"
-                app:layout_constraintStart_toEndOf="@id/indicatorA"
-                app:layout_constraintTop_toTopOf="@id/indicatorA" />
+<TextView
+                 android:id="@+id/columnATitle"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="8dp"
+                 android:fontFamily="@font/poppins_bold"
+                 android:text="Bloco A"
+                 android:textColor="@color/main_verde_escuro_indicador"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 app:layout_constraintBottom_toBottomOf="@id/indicatorA"
+                 app:layout_constraintStart_toEndOf="@id/indicatorA"
+                 app:layout_constraintTop_toTopOf="@id/indicatorA" />
 
-            <Button
-android:id="@+id/columnAPrimeiroAndar"
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:text="1º Andar"
-                  android:background="@drawable/main_btn_pisos"
-                  app:backgroundTint="@color/dark_green"
-                android:textColor="@android:color/white"
-                app:layout_constraintTop_toBottomOf="@id/columnATitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="8dp" />
+<Button
+                   android:id="@+id/columnAPrimeiroAndar"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="1º Andar"
+                   android:background="@drawable/main_btn_pisos"
+                   app:backgroundTint="@color/main_verde_escuro_indicador"
+                 android:textColor="@android:color/white"
+                 app:layout_constraintTop_toBottomOf="@id/columnATitle"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:layout_marginTop="8dp" />
 
-            <Button
-android:id="@+id/columnATerreo"
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:text="Térreo"
-                  android:background="@drawable/main_btn_pisos"
-                  app:backgroundTint="@color/dark_green"
-                android:textColor="@android:color/white"
-                app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="8dp" />
+<Button
+                   android:id="@+id/columnATerreo"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="Térreo"
+                   android:background="@drawable/main_btn_pisos"
+                   app:backgroundTint="@color/main_verde_escuro_indicador"
+                 android:textColor="@android:color/white"
+                 app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:layout_marginTop="8dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -210,53 +210,53 @@ android:id="@+id/columnATerreo"
             android:layout_height="wrap_content"
             android:padding="12dp">
 
-            <View
-                android:id="@+id/indicatorB"
-                android:layout_width="4dp"
-                android:layout_height="16dp"
-                android:background="@color/dark_green"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+<View
+                 android:id="@+id/indicatorB"
+                 android:layout_width="4dp"
+                 android:layout_height="16dp"
+                 android:background="@color/main_verde_escuro_indicador"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/columnBTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Bloco B"
-                android:textColor="@color/dark_green"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/indicatorB"
-                app:layout_constraintStart_toEndOf="@id/indicatorB"
-                app:layout_constraintTop_toTopOf="@id/indicatorB" />
+<TextView
+                 android:id="@+id/columnBTitle"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="8dp"
+                 android:fontFamily="@font/poppins_bold"
+                 android:text="Bloco B"
+                 android:textColor="@color/main_verde_escuro_indicador"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 app:layout_constraintBottom_toBottomOf="@id/indicatorB"
+                 app:layout_constraintStart_toEndOf="@id/indicatorB"
+                 app:layout_constraintTop_toTopOf="@id/indicatorB" />
 
-            <Button
-android:id="@+id/columnBPrimeiroAndar"
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:text="1º Andar"
-                  android:background="@drawable/main_btn_pisos"
-                  app:backgroundTint="@color/dark_green"
-                android:textColor="@android:color/white"
-                app:layout_constraintTop_toBottomOf="@id/columnBTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="8dp" />
+<Button
+                   android:id="@+id/columnBPrimeiroAndar"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="1º Andar"
+                   android:background="@drawable/main_btn_pisos"
+                   app:backgroundTint="@color/main_verde_escuro_indicador"
+                 android:textColor="@android:color/white"
+                 app:layout_constraintTop_toBottomOf="@id/columnBTitle"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:layout_marginTop="8dp" />
 
-            <Button
-android:id="@+id/columnBTerreo"
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:text="Térreo"
-                  android:background="@drawable/main_btn_pisos"
-                  app:backgroundTint="@color/dark_green"
-                android:textColor="@android:color/white"
-                app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="8dp" />
+<Button
+                   android:id="@+id/columnBTerreo"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="Térreo"
+                   android:background="@drawable/main_btn_pisos"
+                   app:backgroundTint="@color/main_verde_escuro_indicador"
+                 android:textColor="@android:color/white"
+                 app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:layout_marginTop="8dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
