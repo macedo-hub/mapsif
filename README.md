@@ -1,5 +1,7 @@
 # MapsIF - Guia Interativo do IFPB Santa Luzia
-![Logo MapsIF](assets/geral_logo_mapsif_verde.png)
+<p align="center">
+  <img src="assets/geral_logo_mapsif_verde.png" width="150">
+</p>
 
 Projeto de Conclusão do Curso Técnico de Informática do IFPB Santa Luzia (turma 2024-2026). Aplicativo Android para tour virtual 360° do campus, desenvolvido por Lucas Emanuel Nóbrega de Macêdo e Iasmim Anahí Alves Silva, sob orientação do Prof. Dr. Antonio Alexandre Moura Costa.
 
@@ -29,11 +31,17 @@ APKs estarão disponíveis em [GitHub Releases] quando o app atingir estabilidad
 - **Gradle Version Catalog** para gerenciamento de dependências
 
 ## Demonstração
-![Tela Inicial](assets/demo/tela_inicial.png)
+<p align="center">
+  <img src="assets/demo/tela_inicial.png" width="80%">
+</p>
 *Menu com navegação por blocos e andares*
 
-![Tour 360°](assets/demo/tour_360.gif)
+<p align="center">
+  <img src="assets/demo/tour_360.gif" width="80%">
+</p>
 *Navegação em ambiente virtual interativo*
 
-![Sobre o Projeto](assets/demo/sobre.png)
+<p align="center">
+  <img src="assets/demo/sobre.png" width="80%">
+</p>
 *Seção com informações da equipe*
