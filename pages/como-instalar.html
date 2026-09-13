@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como instalar o MapsIF — Passo a passo</title>
+<meta name="description" content="Passo a passo com prints de tela para baixar e instalar o APK do MapsIF no seu Android.">
+<link rel="icon" type="image/svg+xml" href="img/geral/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="somente-leitor-tela" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+  <a href="../index.html" class="marca">
+    <img src="img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
+    <img src="img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
+  </a>
+
+  <nav class="nav-principal" aria-label="Navegação principal">
+    <a href="../index.html#sobre">Sobre</a>
+    <a href="../index.html#campus">O campus</a>
+    <a href="como-instalar.html">Como instalar</a>
+    <a href="../index.html#referencias">Referências</a>
+  </nav>
+
+  <div class="acoes-cabecalho">
+    <button class="botao-tema" data-botao-tema aria-label="Alternar entre modo claro e escuro">
+      <i data-lucide="sun" class="icone-sol"></i>
+      <i data-lucide="moon" class="icone-lua"></i>
+    </button>
+    <button class="botao-menu" data-botao-menu aria-expanded="false" aria-controls="menu-movel" aria-label="Abrir menu de navegação">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+
+  <nav id="menu-movel" class="menu-movel" data-menu-movel aria-label="Navegação móvel">
+    <a href="../index.html#sobre">Sobre</a>
+    <a href="../index.html#campus">O campus</a>
+    <a href="como-instalar.html">Como instalar</a>
+    <a href="../index.html#referencias">Referências</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="secao" style="padding-bottom: 2rem;">
+    <div class="container">
+      <span class="hero__etiqueta">
+        <i data-lucide="smartphone"></i>
+        Passo a passo
+      </span>
+      <h1 style="font-size:clamp(2rem, 1.5rem + 2vw, 3rem); max-width: 20ch;">Como instalar o MapsIF no seu Android</h1>
+      <p style="font-size:1.08rem; max-width: 60ch;">
+        Como o MapsIF ainda não está na Play Store, o Android pede uma confirmação
+        extra antes de instalar. É normal, leva menos de dois minutos e só precisa
+        ser feito uma vez.
+      </p>
+      <div class="grupo-botoes">
+        <!-- TODO: mesmo link do botão da home — trocar quando a Release existir -->
+        <a class="botao botao--primario" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk" data-link-apk>
+          <i data-lucide="download"></i> Baixar o APK agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" style="padding-top:0;">
+    <div class="container">
+      <div class="passos-instalacao">
+
+        <div class="passo">
+          <div class="passo__cabecalho">
+            <span class="passo__numero">Passo 1</span>
+            <h3>Baixe o arquivo .apk</h3>
+          </div>
+          <div class="passo__corpo">
+            <p>
+              Toque no botão "Baixar o APK". O arquivo vai para a pasta de
+              <strong>Downloads</strong> do seu celular. Quando o download
+              terminar, toque nele para começar a instalação.
+            </p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <div class="passo__cabecalho">
+            <span class="passo__numero">Passo 2</span>
+            <h3>Autorize a instalação de fontes desconhecidas</h3>
+          </div>
+          <div class="passo__corpo">
+            <p>
+              Como o MapsIF não vem da Play Store, o Android vai pedir permissão
+              para instalar a partir dessa fonte. Toque em <strong>Configurações</strong>
+              e ative a opção <strong>Permitir desta fonte</strong>.
+            </p>
+            <div class="aviso">
+              <i data-lucide="shield-check"></i>
+              <span>Esse aviso aparece para qualquer aplicativo instalado fora da Play Store — não significa que o MapsIF tem algum problema.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="passo">
+          <div class="passo__cabecalho">
+            <span class="passo__numero">Passo 3</span>
+            <h3>Confirme o aviso do Play Protect</h3>
+          </div>
+          <div class="passo__corpo">
+            <p>
+              O Play Protect pode avisar que o app "não é reconhecido". Toque em
+              <strong>Instalar mesmo assim</strong> para continuar — isso acontece
+              porque o MapsIF é distribuído fora da Play Store, e não por ser
+              inseguro.
+            </p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <div class="passo__cabecalho">
+            <span class="passo__numero">Passo 4</span>
+            <h3>Abra o MapsIF e comece o tour</h3>
+          </div>
+          <div class="passo__corpo">
+            <p>
+              Pronto! Quando a instalação terminar, toque em <strong>Abrir</strong>
+              — ou procure o ícone do MapsIF na sua tela inicial. O app abre
+              direto na navegação por blocos e andares do campus.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="teaser-instalar" style="margin-top:4rem;">
+        <div>
+          <h2 style="font-size:1.5rem;">Ainda com dúvida em algum passo?</h2>
+          <p>Abra um chamado no repositório do projeto no GitHub — os desenvolvedores respondem por lá.</p>
+        </div>
+        <div class="grupo-botoes">
+          <a class="botao botao--secundario" href="https://github.com/macedo-hub/mapsif/issues" target="_blank" rel="noopener">
+            <i data-lucide="github"></i> Abrir um chamado
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <div class="rodape__grade">
+      <div>
+        <div class="rodape__marca marca">
+          <img src="img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
+          <img src="img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
+        </div>
+        <p class="rodape__texto">
+          Tour virtual 360° do campus do IFPB Santa Luzia, criado por alunos do
+          curso técnico de Informática (turma 2024–2026).
+        </p>
+      </div>
+      <ul class="rodape__lista">
+        <li><a href="../index.html#sobre">Sobre o projeto</a></li>
+        <li><a href="../index.html#campus">O campus</a></li>
+        <li><a href="https://github.com/macedo-hub/mapsif" target="_blank" rel="noopener">Repositório no GitHub</a></li>
+      </ul>
+    </div>
+    <div class="rodape__base">
+      <span>© <span data-ano-atual>2026</span> MapsIF — IFPB Campus Santa Luzia</span>
+      <span>Orientação: Dr. Antonio Alexandre Moura Costa</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mostrador-rotacao" aria-hidden="true">
+  <div class="mostrador-rotacao__fundo"></div>
+  <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--cor-linha)" stroke-width="1.4" stroke-linecap="round">
+      <line x1="29" y1="3" x2="29" y2="7"/>
+      <line x1="47.38" y1="10.62" x2="43.85" y2="14.15"/>
+      <line x1="55" y1="29" x2="50" y2="29"/>
+      <line x1="47.38" y1="47.38" x2="43.85" y2="43.85"/>
+      <line x1="29" y1="55" x2="29" y2="50"/>
+      <line x1="10.62" y1="47.38" x2="14.15" y2="43.85"/>
+      <line x1="3" y1="29" x2="8" y2="29"/>
+      <line x1="10.62" y1="10.62" x2="14.15" y2="14.15"/>
+    </g>
+    <g class="mostrador-rotacao__agulha" data-agulha>
+      <line x1="29" y1="29" x2="29" y2="11" stroke="var(--cor-primaria)" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="29" cy="29" r="2.6" fill="var(--cor-primaria)"/>
+    </g>
+  </svg>
+  <span class="mostrador-rotacao__grau" data-leitura-grau>000°</span>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

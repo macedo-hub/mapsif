@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MapsIF — Tour virtual 360° do IFPB Santa Luzia</title>
+<meta name="description" content="MapsIF é um tour virtual em 360° pelo campus do IFPB Santa Luzia. Baixe o APK e veja como instalar, direto do celular.">
+<link rel="icon" type="image/svg+xml" href="pages/img/geral/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="pages/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+</head>
+<body>
+
+<a class="somente-leitor-tela" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+  <a href="index.html" class="marca">
+    <img src="pages/img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
+    <img src="pages/img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
+  </a>
+
+  <nav class="nav-principal" aria-label="Navegação principal">
+    <a href="#sobre">Sobre</a>
+    <a href="#campus">O campus</a>
+    <a href="pages/como-instalar.html">Como instalar</a>
+    <a href="#referencias">Referências</a>
+  </nav>
+
+  <div class="acoes-cabecalho">
+    <button class="botao-tema" data-botao-tema aria-label="Alternar entre modo claro e escuro">
+      <i data-lucide="sun" class="icone-sol"></i>
+      <i data-lucide="moon" class="icone-lua"></i>
+    </button>
+    <button class="botao-menu" data-botao-menu aria-expanded="false" aria-controls="menu-movel" aria-label="Abrir menu de navegação">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+
+  <nav id="menu-movel" class="menu-movel" data-menu-movel aria-label="Navegação móvel">
+    <a href="#sobre">Sobre</a>
+    <a href="#campus">O campus</a>
+    <a href="pages/como-instalar.html">Como instalar</a>
+    <a href="#referencias">Referências</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero__grade">
+      <div>
+        <span class="hero__etiqueta">
+          <i data-lucide="map-pin"></i>
+          IFPB Campus Santa Luzia
+        </span>
+        <h1 class="fs-h1">
+          <span class="linha"><span>Conheça o campus do IFPB Santa Luzia</span></span>
+          <span class="linha"><span>antes mesmo de chegar lá.</span></span>
+        </h1>
+        <p class="hero__sub">
+          O MapsIF é um tour virtual em 360° pelos blocos e ambientes do campus Santa Luzia,
+          feito para quem nunca esteve lá conhecer o espaço direto do celular — sem precisar
+          de conta em loja de aplicativos.
+        </p>
+        <div class="grupo-botoes hero__cta">
+          <!--
+            TODO (Lucas/Iasmim): troque o href abaixo pelo link real assim que a Release
+            existir no GitHub. Se o arquivo do APK sempre se chamar "mapsif.apk" em toda
+            release nova, este link "latest/download" nunca precisa ser trocado de novo.
+          -->
+          <a class="botao botao--primario" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk" data-link-apk>
+            <i data-lucide="download"></i> Baixar o APK
+          </a>
+          <a class="botao botao--secundario" href="pages/como-instalar.html">
+            <i data-lucide="list-checks"></i> Ver como instalar
+          </a>
+        </div>
+        <p style="margin-top:1.1rem; font-size:0.85rem; color:var(--cor-tinta-suave);">
+          Arquivo .apk · Requer Android 8.0 (Oreo) ou superior
+        </p>
+      </div>
+
+      <div class="moldura-panorama">
+        <div class="moldura-panorama__quadro">
+          <div id="visualizador-360" class="visualizador-360"></div>
+          <div class="mira-canto mira-canto--tl"></div>
+          <div class="mira-canto mira-canto--tr"></div>
+          <div class="mira-canto mira-canto--bl"></div>
+          <div class="mira-canto mira-canto--br"></div>
+          <div class="selo-cena">
+            <span class="selo-cena__ponto"></span>
+            <span>Prévia 360° (exemplo)</span>
+          </div>
+        </div>
+        <div class="legenda-panorama">
+          <span>Arraste para olhar ao redor</span>
+          <span>Prévia com fotos de exemplo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section id="sobre" class="secao">
+    <div class="container sobre__grade">
+      <div class="sobre__texto">
+        <h2>Sobre o projeto</h2>
+        <p>
+          O MapsIF é um projeto criado por alunos do curso técnico de Informática
+          do IFPB Campus Santa Luzia (turma 2024–2026). A proposta é simples: levar
+          quem ainda não conhece o campus por um passeio em 360°, ambiente por
+          ambiente, bloco por bloco.
+        </p>
+        <p>
+          O aplicativo foi desenvolvido em Java para Android, usando o Pannellum para os
+          visualizadores 360° dentro de uma WebView, e organiza o tour seguindo a mesma
+          divisão física do campus: Bloco A e Bloco B, cada um com seus andares e ambientes.
+        </p>
+      </div>
+
+      <!--
+        ATENÇÃO Lucas: o README.md usa "Iasmim Anahí Alves Souza" e o AGENTS.md usa
+        "Iasmim Anahí Alves Silva" — usei "Silva" abaixo (AGENTS.md). Confirme qual
+        sobrenome está correto e ajuste o texto se precisar.
+      -->
+      <div class="placa-lista" aria-label="Equipe do projeto">
+        <div class="placa">
+          <img class="placa__foto" src="pages/img/equipe/lucas.webp" alt="Foto de Lucas Emanuel Nóbrega de Macêdo">
+          <div>
+            <p class="placa__nome">Lucas Emanuel Nóbrega de Macêdo</p>
+            <p class="placa__funcao">Desenvolvimento Android</p>
+          </div>
+          <span class="placa__sala">DEV</span>
+        </div>
+        <div class="placa">
+          <img class="placa__foto" src="pages/img/equipe/iasmim.webp" alt="Foto de Iasmim Anahí Alves Silva">
+          <div>
+            <p class="placa__nome">Iasmim Anahí Alves Silva</p>
+            <p class="placa__funcao">Desenvolvimento Android &amp; UI/UX</p>
+          </div>
+          <span class="placa__sala">DEV</span>
+        </div>
+        <div class="placa">
+          <img class="placa__foto" src="pages/img/equipe/alexandre.webp" alt="Foto de Dr. Antonio Alexandre Moura Costa">
+          <div>
+            <p class="placa__nome">Dr. Antonio Alexandre Moura Costa</p>
+            <p class="placa__funcao">Professor orientador</p>
+          </div>
+          <span class="placa__sala">ORIENT.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAMPUS ===================== -->
+  <section id="campus" class="secao secao--alt">
+    <div class="container">
+      <div class="cabecalho-secao">
+        <h2>Como o campus está organizado</h2>
+        <p>O tour segue a mesma divisão do campus físico: dois blocos ligados por um corredor, cada um com sua própria vocação.</p>
+      </div>
+
+      <div class="diretorio">
+        <div class="predio">
+          <div class="predio__topo">
+            <h3>Bloco A</h3>
+            <span>Salas de aula e administração</span>
+          </div>
+          <div class="andar aberto">
+            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="true">
+              <span>Térreo</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="andar__conteudo">
+              <ul class="andar__lista">
+                <li>Salas de aula</li>
+                <li>Direção e administração</li>
+              </ul>
+            </div>
+          </div>
+          <div class="andar">
+            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="false">
+              <span>1º andar</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="andar__conteudo">
+              <ul class="andar__lista">
+                <li>NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas</li>
+                <li>Copa e refeitório</li>
+                <li>Sala dos professores</li>
+                <li>Laboratório de Informática 1</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="predio">
+          <div class="predio__topo">
+            <h3>Bloco B</h3>
+            <span>Biblioteca e laboratórios</span>
+          </div>
+          <div class="andar aberto">
+            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="true">
+              <span>Térreo</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="andar__conteudo">
+              <ul class="andar__lista">
+                <li>Biblioteca</li>
+                <li>Laboratório de Energias Renováveis</li>
+              </ul>
+            </div>
+          </div>
+          <div class="andar">
+            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="false">
+              <span>1º andar</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="andar__conteudo">
+              <ul class="andar__lista">
+                <li>Laboratório de Informática 2</li>
+                <li>Auditório</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMO INSTALAR (teaser) ===================== -->
+  <section id="como-instalar" class="secao">
+    <div class="container">
+      <div class="teaser-instalar">
+        <div>
+          <h2>Instalar é simples — leva menos de dois minutos</h2>
+          <p>
+            Como o MapsIF ainda não está na Play Store, o Android pede uma confirmação
+            extra antes de instalar. Preparamos um passo a passo com print de cada etapa.
+          </p>
+          <ul class="lista-passos-mini">
+            <li><span class="numero">1</span> Baixe o arquivo .apk pelo botão</li>
+            <li><span class="numero">2</span> Autorize a instalação de fontes desconhecidas</li>
+            <li><span class="numero">3</span> Confirme o aviso do Play Protect</li>
+            <li><span class="numero">4</span> Abra o MapsIF e comece o tour</li>
+          </ul>
+        </div>
+        <div class="grupo-botoes">
+          <a class="botao botao--secundario" href="pages/como-instalar.html">
+            <i data-lucide="list-checks"></i> Ver passo a passo completo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REFERÊNCIAS ===================== -->
+  <section id="referencias" class="secao secao--alt">
+    <div class="container">
+      <div class="cabecalho-secao">
+        <h2>Tecnologias e referências</h2>
+        <p>Ferramentas e bibliotecas usadas na construção do MapsIF.</p>
+      </div>
+
+      <div class="lista-tecnologias">
+        <div class="tecnologia">
+          <i data-lucide="cpu"></i>
+          <div><h4>Java + Android SDK</h4><p>SDK alvo 37, mínimo 26 (Android 8.0).</p></div>
+        </div>
+        <div class="tecnologia">
+          <i data-lucide="view"></i>
+          <div><h4>Pannellum</h4><p>Biblioteca JS/WebGL para os visualizadores 360°, embutida via WebView.</p></div>
+        </div>
+        <div class="tecnologia">
+          <i data-lucide="layout-grid"></i>
+          <div><h4>Material Design Components</h4><p>Componentes de interface usados no aplicativo.</p></div>
+        </div>
+        <div class="tecnologia">
+          <i data-lucide="shapes"></i>
+          <div><h4>Lucide Icons</h4><p>Conjunto de ícones usado tanto no app quanto neste site.</p></div>
+        </div>
+        <div class="tecnologia">
+          <i data-lucide="image"></i>
+          <div><h4>Glide</h4><p>Carregamento eficiente de imagens dentro do app.</p></div>
+        </div>
+        <div class="tecnologia">
+          <i data-lucide="package"></i>
+          <div><h4>Gradle Version Catalog</h4><p>Gerenciamento centralizado de dependências.</p></div>
+        </div>
+      </div>
+
+      <div class="grupo-botoes">
+        <a class="botao botao--secundario" href="https://github.com/macedo-hub/mapsif" target="_blank" rel="noopener">
+          <i data-lucide="github"></i> Ver código no GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="rodape">
+  <div class="container">
+    <div class="rodape__grade">
+      <div>
+        <div class="rodape__marca marca">
+          <img src="pages/img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
+          <img src="pages/img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
+        </div>
+        <p class="rodape__texto">
+          Tour virtual 360° do campus do IFPB Santa Luzia, criado por alunos do
+          curso técnico de Informática (turma 2024–2026).
+        </p>
+      </div>
+      <ul class="rodape__lista">
+        <li><a href="#sobre">Sobre o projeto</a></li>
+        <li><a href="#campus">O campus</a></li>
+        <li><a href="pages/como-instalar.html">Como instalar</a></li>
+        <li><a href="https://github.com/macedo-hub/mapsif" target="_blank" rel="noopener">Repositório no GitHub</a></li>
+      </ul>
+    </div>
+    <div class="rodape__base">
+      <span>© <span data-ano-atual>2026</span> MapsIF — IFPB Campus Santa Luzia</span>
+      <span>Orientação: Dr. Antonio Alexandre Moura Costa</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mostrador de rotação fixo — decorativo, acompanha a rolagem da página -->
+<div class="mostrador-rotacao" aria-hidden="true">
+  <div class="mostrador-rotacao__fundo"></div>
+  <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--cor-linha)" stroke-width="1.4" stroke-linecap="round">
+      <line x1="29" y1="3" x2="29" y2="7"/>
+      <line x1="47.38" y1="10.62" x2="43.85" y2="14.15"/>
+      <line x1="55" y1="29" x2="50" y2="29"/>
+      <line x1="47.38" y1="47.38" x2="43.85" y2="43.85"/>
+      <line x1="29" y1="55" x2="29" y2="50"/>
+      <line x1="10.62" y1="47.38" x2="14.15" y2="43.85"/>
+      <line x1="3" y1="29" x2="8" y2="29"/>
+      <line x1="10.62" y1="10.62" x2="14.15" y2="14.15"/>
+    </g>
+    <g class="mostrador-rotacao__agulha" data-agulha>
+      <line x1="29" y1="29" x2="29" y2="11" stroke="var(--cor-primaria)" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="29" cy="29" r="2.6" fill="var(--cor-primaria)"/>
+    </g>
+  </svg>
+  <span class="mostrador-rotacao__grau" data-leitura-grau>000°</span>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js" defer></script>
+<script src="pages/js/main.js" defer></script>
+</body>
+</html>
