@@ -30,6 +30,16 @@ APKs estarão disponíveis em [GitHub Releases] quando o app atingir estabilidad
 - **Glide** - Carregamento eficiente de imagens
 - **Gradle Version Catalog** para gerenciamento de dependências
 
+## Sobre o Site
+
+Este site foi criado com o propósito educacional de servir como exemplo prático de como é o aplicativo MapsIF e ensinar como baixá-lo e utilizá-lo. Nele você encontra:
+- Informações sobre o projeto e sua equipe
+- Demonstrativo do tour virtual 360°
+- Instruções para download e instalação do APK
+- Detalhes sobre as tecnologias utilizadas
+
+O endereço do site é: https://macedo-hub.github.io/mapsif/
+
 ## Demonstração
 <p align="center">
   <img src="assets/demo/tela_inicial.png" width="80%">
