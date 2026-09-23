@@ -13,8 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity {
+    private ImageButton menuButton;
+    private ImageButton sobreButton;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageButton sobreButton = findViewById(R.id.sobreButton);
+        ImageButton menuButton = findViewById(R.id.menuButton);
+        DrawerLayout drawerLayout = findViewById(R.id.main);
+
+        //sobre
         sobreButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SobreActivity.class);
             startActivity(intent);
         });
+
+        //menu lateral
+        menuButton.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
 
     }
 }

@@ -47,7 +47,7 @@
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Sobre o MapsIF"
-android:textColor="@color/sobre_texto_primario"
+                android:textColor="@color/sobre_texto_primario"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnVoltar"
