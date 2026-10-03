@@ -79,7 +79,7 @@
          android:layout_width="0dp"
          android:layout_height="38dp"
          android:scaleType="fitCenter"
-         android:src="@drawable/main_ic_logo_maps_if"
+         android:src="@drawable/logo_mapsif_branca"
          android:contentDescription="Logo do Maps IF"
          app:layout_constraintStart_toEndOf="@id/menuButton"
          app:layout_constraintEnd_toStartOf="@id/sobreButton"
@@ -270,14 +270,83 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- MENU LATERAL -->
-    <LinearLayout android:id="@+id/menu_lateral"
-        android:layout_width="250dp"
+    <LinearLayout
+        android:id="@+id/menu_lateral"
+        android:layout_width="225dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#E1F0DE"
+        android:background="@color/cor_branca"
         android:orientation="vertical">
 
-        <!-- Conteúdo do menu será colocado aqui depois -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="Logo MapsIF"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo_mapsif_verde" />
+
+        <!-- linha -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/main_verde_escuro_indicador" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Explorar mais"
+            android:textColor="@color/main_verde_escuro_indicador"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_inicio_trilha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:background="@drawable/main_btn_arredondado"
+            android:text="Início da trilha"
+            android:textColor="@color/main_ic_lateral"
+            android:drawableStart="@drawable/ic_trilha"
+            android:drawablePadding="8dp" />
+
+        <Button
+            android:id="@+id/btn_sala_descanso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:background="@drawable/main_btn_arredondado"
+            android:text="Sala de descanso"
+            android:textColor="@color/main_ic_lateral"
+            android:drawableStart="@drawable/ic_descanso"
+            android:drawablePadding="8dp" />
+
+        <Button
+            android:id="@+id/btn_sala_servidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:background="@drawable/main_btn_arredondado"
+            android:text="Sala de servidor"
+            android:textColor="@color/main_ic_lateral"
+            android:drawableStart="@drawable/ic_servidor"
+            android:drawablePadding="8dp" />
+
+
 
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
