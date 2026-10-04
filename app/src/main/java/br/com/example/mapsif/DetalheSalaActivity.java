@@ -1,0 +1,53 @@
+package br.com.example.mapsif;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import br.com.example.mapsif.data.SalaRepository;
+import br.com.example.mapsif.model.Sala;
+
+public class DetalheSalaActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_detalhe_sala);
+
+        String salaId = getIntent().getStringExtra("salaId");
+
+        Sala sala = SalaRepository.getSalaPorId(salaId);
+
+        TextView txtTitulo = findViewById(R.id.txtTituloDetalhe);
+        ImageView imgSala = findViewById(R.id.imgDetalheSala);
+        TextView txtDescricao = findViewById(R.id.txtDescricaoDetalhe);
+
+        txtTitulo.setText(sala.getTitulo());
+        imgSala.setImageResource(sala.getImagem());
+        txtDescricao.setText(sala.getDescricao());
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        ImageButton btnVoltar = findViewById(R.id.btnVoltar);
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+}
