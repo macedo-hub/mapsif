@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -26,9 +25,16 @@ public class SobreActivity extends AppCompatActivity {
         });
 
         // Botão de voltar
-        ImageButton btnVoltar = findViewById(R.id.btnVoltar);
-        if (btnVoltar != null) {
-            btnVoltar.setOnClickListener(v -> finish());
+        ImageButton btnVoltarSobre = findViewById(R.id.btnVoltarSobre);
+
+        if (btnVoltarSobre != null) {
+            btnVoltarSobre.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
 
         // --- LUCAS EMANUEL ---
@@ -47,13 +53,17 @@ public class SobreActivity extends AppCompatActivity {
         abrirLink(R.id.cardGithubProjeto, "https://github.com/macedo-hub/mapsif");
     }
 
-    //Método simples para abrir o link ao clicar no botão
+    // Método para abrir o link ao clicar no botão
     private void abrirLink(int idDoElemento, String url) {
         View elemento = findViewById(idDoElemento);
+
         if (elemento != null) {
-            elemento.setOnClickListener(v -> {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(intent);
+            elemento.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                }
             });
         }
     }

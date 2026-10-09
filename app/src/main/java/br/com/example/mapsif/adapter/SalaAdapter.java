@@ -21,19 +21,24 @@ public class SalaAdapter extends RecyclerView.Adapter<SalaAdapter.SalaViewHolder
 
     private final Context context;
     private final List<Sala> salas;
+    private final String localizacao;
 
-    public SalaAdapter(Context context, List<Sala> salas) {
+    public SalaAdapter(Context context, List<Sala> salas, String localizacao) {
         this.context = context;
         this.salas = salas;
+        this.localizacao = localizacao;
     }
+
     @Override
     public SalaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_sala, parent, false);
         return new SalaViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull SalaViewHolder holder, int position) {
         Sala sala = salas.get(position);
+
         holder.txtTitulo.setText(sala.getTitulo());
         holder.txtSubtitulo.setText(sala.getSubtitulo());
         holder.imgIcone.setImageResource(sala.getIcone());
@@ -43,21 +48,26 @@ public class SalaAdapter extends RecyclerView.Adapter<SalaAdapter.SalaViewHolder
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetalheSalaActivity.class);
                 intent.putExtra("salaId", sala.getId());
+                intent.putExtra("localizacao", localizacao);
                 context.startActivity(intent);
             }
         });
     }
+
     @Override
     public int getItemCount() {
         return salas.size();
     }
+
     static class SalaViewHolder extends RecyclerView.ViewHolder {
+
         ImageView imgIcone;
         TextView txtTitulo;
         TextView txtSubtitulo;
 
         SalaViewHolder(@NonNull View itemView) {
             super(itemView);
+
             imgIcone = itemView.findViewById(R.id.imgIconeSala);
             txtTitulo = itemView.findViewById(R.id.txtTituloSala);
             txtSubtitulo = itemView.findViewById(R.id.txtSubtituloSala);

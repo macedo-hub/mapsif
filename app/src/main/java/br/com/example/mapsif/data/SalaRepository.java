@@ -58,6 +58,29 @@ public class SalaRepository {
                 false,
                 Localizacao.BLOCO_A_PRIMEIRO_ANDAR
         ));
+
+        TODAS_AS_SALAS.add(new Sala(
+                "lab_quimica",
+                "Laboratório de Química",
+                "Espaço para aulas práticas de química",
+                "Laboratório destinado à realização de experimentos e atividades práticas relacionadas à Química.",
+                R.drawable.ic_quimica,
+                R.drawable.img_lab_quimica,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
+        TODAS_AS_SALAS.add(new Sala(
+                "lab_biologia",
+                "Laboratório de Biologia",
+                "Espaço para estudos de biologia",
+                "Laboratório destinado ao estudo dos seres vivos e à realização de atividades práticas relacionadas à Biologia.",
+                R.drawable.ic_biologia,
+                R.drawable.img_lab_biologia,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
         // ==================== BLOCO A — TÉRREO ====================
         TODAS_AS_SALAS.add(new Sala(
                 "sala_aula",

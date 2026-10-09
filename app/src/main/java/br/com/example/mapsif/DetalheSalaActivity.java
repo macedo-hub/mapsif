@@ -1,6 +1,7 @@
-package br.com.example.mapsif;
+ package br.com.example.mapsif;
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,30 +24,34 @@ public class DetalheSalaActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detalhe_sala);
 
-        String salaId = getIntent().getStringExtra("salaId");
-
-        Sala sala = SalaRepository.getSalaPorId(salaId);
-
-        TextView txtTitulo = findViewById(R.id.txtTituloDetalhe);
-        ImageView imgSala = findViewById(R.id.imgDetalheSala);
-        TextView txtDescricao = findViewById(R.id.txtDescricaoDetalhe);
-
-        txtTitulo.setText(sala.getTitulo());
-        imgSala.setImageResource(sala.getImagem());
-        txtDescricao.setText(sala.getDescricao());
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        ImageButton btnVoltar = findViewById(R.id.btnVoltar);
+        // Busca os dados da sala
+        String salaId = getIntent().getStringExtra("salaId");
+        Sala sala = SalaRepository.getSalaPorId(salaId);
 
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
+        // Localiza os elementos da tela
+        TextView txtTitulo = findViewById(R.id.txtTituloDetalhe);
+        ImageView imgSala = findViewById(R.id.imgDetalheSala);
+        TextView txtDescricao = findViewById(R.id.txtDescricaoDetalhe);
+        ImageButton btnVoltarDetalhe = findViewById(R.id.btnVoltarDetalhe);
+
+        // Exibe os dados da sala
+        txtTitulo.setText(sala.getTitulo());
+        imgSala.setImageResource(sala.getImagem());
+        txtDescricao.setText(sala.getDescricao());
+
+        // Botão de voltar
+        btnVoltarDetalhe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), ListaSalasActivity.class);
+                intent.putExtra("localizacao", getIntent().getStringExtra("localizacao"));
+                startActivity(intent);
             }
         });
     }

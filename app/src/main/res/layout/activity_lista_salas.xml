@@ -1,8 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
+
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recyclerSalas"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
-</androidx.recyclerview.widget.RecyclerView>
+    android:background="@color/sobre_branco_fundo"
+    tools:context=".ListaSalasActivity">
+
+    <!-- Cabeçalho -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/sobre_verde_claro_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Botão voltar -->
+        <ImageButton
+            android:id="@+id/btnVoltarLista"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/sobre_btn_circular_contorno"
+            android:src="@drawable/sobre_ic_voltar"
+            android:contentDescription="Voltar para a tela inicial"
+            app:tint="@color/sobre_verde_primario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Título do andar -->
+        <TextView
+            android:id="@+id/txtTituloLista"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Ambientes"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/btnVoltarLista"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Texto de orientação -->
+    <TextView
+        android:id="@+id/txtSubtituloLista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins"
+        android:text="Escolha um ambiente para conhecer mais."
+        android:textColor="@color/sobre_texto_secundario"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Lista de ambientes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSalas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtituloLista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_sala" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
