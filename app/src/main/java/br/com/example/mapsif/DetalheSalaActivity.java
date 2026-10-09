@@ -23,7 +23,6 @@ public class DetalheSalaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detalhe_sala);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -52,6 +51,23 @@ public class DetalheSalaActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ListaSalasActivity.class);
                 intent.putExtra("localizacao", getIntent().getStringExtra("localizacao"));
                 startActivity(intent);
+            }
+        });
+        // Botão de voltar
+        btnVoltarDetalhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String origem = getIntent().getStringExtra("origem");
+
+                if ("menu".equals(origem)) {
+                    Intent intent = new Intent(DetalheSalaActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(DetalheSalaActivity.this, ListaSalasActivity.class);
+                    intent.putExtra("localizacao", getIntent().getStringExtra("localizacao"));
+                    startActivity(intent);
+                }
             }
         });
     }

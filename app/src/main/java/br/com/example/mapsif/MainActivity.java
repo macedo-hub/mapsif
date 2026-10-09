@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         Button columnBPrimeiroAndar = findViewById(R.id.columnBPrimeiroAndar);
         Button columnBTerreo = findViewById(R.id.columnBTerreo);
 
+        // Botões do menu lateral
+        Button btnInicioTrilha = findViewById(R.id.btn_inicio_trilha);
+        Button btnSalaDescanso = findViewById(R.id.btn_sala_descanso);
+        Button btnSalaServidor = findViewById(R.id.btn_sala_servidor);
+
         // sobre
         sobreButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SobreActivity.class);
@@ -94,6 +99,42 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListaSalasActivity.class);
                 intent.putExtra("localizacao", "BLOCO_B_TERREO");
+                startActivity(intent);
+            }
+        });
+
+        // Início da trilha
+        btnInicioTrilha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
+                intent.putExtra("salaId", "inicio_trilha");
+                intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
+                intent.putExtra("origem", "menu");
+                startActivity(intent);
+            }
+        });
+
+        // Sala de descanso
+        btnSalaDescanso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
+                intent.putExtra("salaId", "sala_descanso");
+                intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
+                intent.putExtra("origem", "menu");
+                startActivity(intent);
+            }
+        });
+
+        // Sala de servidor
+        btnSalaServidor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
+                intent.putExtra("salaId", "sala_servidor");
+                intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
+                intent.putExtra("origem", "menu");
                 startActivity(intent);
             }
         });

@@ -138,6 +138,43 @@ public class SalaRepository {
                 true,
                 Localizacao.BLOCO_B_PRIMEIRO_ANDAR
         ));
+
+
+        // ==================== MENU LATERAL ====================
+
+        TODAS_AS_SALAS.add(new Sala(
+                "inicio_trilha",
+                "Início da trilha",
+                "Ponto de início do percurso",
+                "Local de início da trilha para explorar os espaços do campus.",
+                R.drawable.ic_trilha,
+                R.drawable.img_trilha,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
+        TODAS_AS_SALAS.add(new Sala(
+                "sala_descanso",
+                "Sala de descanso",
+                "Espaço para descanso",
+                "Ambiente destinado ao descanso e ao bem-estar durante a rotina no campus.",
+                R.drawable.ic_descanso,
+                R.drawable.img_lab_informatica_1,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
+        TODAS_AS_SALAS.add(new Sala(
+                "sala_servidor",
+                "Sala de servidor",
+                "Espaço dos servidores",
+                "Ambiente destinado aos equipamentos e serviços de servidores do campus.",
+                R.drawable.ic_servidor,
+                R.drawable.img_servidores,
+                false,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
     }
     public static List<Sala> getSalasPorLocalizacao(Localizacao localizacao) {
         List<Sala> resultado = new ArrayList<>();
