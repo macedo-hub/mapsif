@@ -2,16 +2,14 @@ package br.com.example.mapsif.data;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.example.mapsif.R;
 import br.com.example.mapsif.model.Localizacao;
 import br.com.example.mapsif.model.Sala;
 
 public class SalaRepository {
 
-    //lista
+    // Lista com todas as salas do aplicativo.
     private static  final List<Sala> TODAS_AS_SALAS = new ArrayList<>();
-
     static {
 
         // ==================== BLOCO A — 1º ANDAR ====================
@@ -19,7 +17,7 @@ public class SalaRepository {
                 "lab_informatica_1",
                 "Laboratório de Informática 1",
                 "Aulas práticas de programação",
-                "O Laboratório de Informática 1 possui 20 computadores disponíveis para aulas práticas e uso livre dos alunos.",
+                "O Laboratório de Informática 1 é um ambiente voltado para aulas práticas, pesquisas e atividades que envolvem tecnologia e informática, contribuindo para o aprendizado e o desenvolvimento dos alunos.",
                 R.drawable.ic_computador,
                 R.drawable.img_lab_informatica_1,
                 true,
@@ -30,7 +28,7 @@ public class SalaRepository {
                 "sala_professores_a",
                 "Sala dos Professores",
                 "Uso exclusivo do corpo docente",
-                "Espaço reservado para os professores realizarem planejamento de aulas e reuniões.",
+                "A Sala dos Professores é um ambiente destinado ao planejamento de aulas, à organização das atividades escolares e à realização de reuniões entre os docentes.",
                 R.drawable.ic_professor,
                 R.drawable.img_sala_professores,
                 false,
@@ -41,7 +39,7 @@ public class SalaRepository {
                 "refeitorio",
                 "Refeitório",
                 "Área de alimentação",
-                "Espaço destinado à alimentação dos alunos e funcionários.",
+                "O Refeitório é um espaço destinado às refeições dos alunos, oferecendo um ambiente para se alimentar e fazer uma pausa durante a rotina escolar.",
                 R.drawable.ic_refeitorio,
                 R.drawable.img_refeitorio,
                 true,
@@ -52,7 +50,7 @@ public class SalaRepository {
                 "sala_neabi",
                 "Sala do NEABI",
                 "Núcleo de Estudos Afro-Brasileiros e Indígenas",
-                "Espaço destinado às atividades e ações do NEABI no campus.",
+                "O espaço do NEABI é dedicado à realização de atividades e ações que valorizam a história e a cultura afro-brasileira e indígena, promovendo o respeito à diversidade e o combate ao preconceito.",
                 R.drawable.ic_neabi,
                 R.drawable.img_sala_neabi,
                 false,
@@ -63,7 +61,7 @@ public class SalaRepository {
                 "lab_quimica",
                 "Laboratório de Química",
                 "Espaço para aulas práticas de química",
-                "Laboratório destinado à realização de experimentos e atividades práticas relacionadas à Química.",
+                "O Laboratório de Química é um ambiente voltado à realização de experimentos e atividades práticas que permitem aos alunos explorar conceitos químicos e relacionar a teoria com a prática.",
                 R.drawable.ic_quimica,
                 R.drawable.img_lab_quimica,
                 true,
@@ -74,7 +72,7 @@ public class SalaRepository {
                 "lab_biologia",
                 "Laboratório de Biologia",
                 "Espaço para estudos de biologia",
-                "Laboratório destinado ao estudo dos seres vivos e à realização de atividades práticas relacionadas à Biologia.",
+                "O Laboratório de Biologia é um ambiente dedicado ao estudo dos seres vivos, onde os alunos podem explorar conceitos da área e realizar atividades práticas que complementam o aprendizado em sala de aula.",
                 R.drawable.ic_biologia,
                 R.drawable.img_lab_biologia,
                 true,
@@ -86,7 +84,7 @@ public class SalaRepository {
                 "sala_aula",
                 "Sala de aula",
                 "Espaço para aulas",
-                "Sala destinada às aulas e atividades acadêmicas do campus.",
+                "Ambiente destinado às aulas e atividades acadêmicas, proporcionando um espaço para o aprendizado, a troca de conhecimentos e o desenvolvimento dos alunos.",
                 R.drawable.ic_sala_aula,
                 R.drawable.img_sala_aula,
                 true,
@@ -97,7 +95,7 @@ public class SalaRepository {
                 "sala_diretora_ensino",
                 "Sala da Diretora de Ensino",
                 "Direção de Ensino",
-                "Espaço destinado ao atendimento e às atividades da Diretoria de Ensino.",
+                "A Diretoria de Ensino é responsável por acompanhar e organizar as atividades acadêmicas do campus, contribuindo para o funcionamento do ensino e o atendimento às demandas escolares.",
                 R.drawable.ic_diretoria,
                 R.drawable.img_diretoria,
                 false,
@@ -109,7 +107,7 @@ public class SalaRepository {
                 "biblioteca",
                 "Biblioteca",
                 "Acervo e sala de estudos",
-                "Espaço destinado à leitura, pesquisa e estudos dos alunos.",
+                "A biblioteca é um ambiente dedicado à leitura, à pesquisa e aos estudos, oferecendo aos alunos um espaço para ampliar conhecimentos e aprofundar o aprendizado.",
                 R.drawable.ic_biblioteca,
                 R.drawable.img_biblioteca,
                 true,
@@ -120,7 +118,7 @@ public class SalaRepository {
                 "sala_energias_renovaveis",
                 "Sala de Energias Renováveis",
                 "Espaço para atividades",
-                "Espaço destinado às atividades e projetos relacionados às energias renováveis.",
+                "O espaço de Energias Renováveis é voltado ao desenvolvimento de atividades e projetos relacionados a fontes de energia sustentáveis, incentivando o aprendizado e a exploração de tecnologias que contribuem para um futuro mais sustentável.",
                 R.drawable.ic_energias,
                 R.drawable.img_energias_renovaveis,
                 true,
@@ -132,7 +130,7 @@ public class SalaRepository {
                 "lab_informatica_2",
                 "Laboratório de Informática 2",
                 "Espaço para atividades de informática",
-                "Espaço destinado às atividades práticas e projetos relacionados à informática.",
+                "O Laboratório de Informática é um ambiente voltado ao desenvolvimento de atividades práticas e projetos na área de tecnologia, permitindo aos alunos aplicar conhecimentos e explorar diferentes recursos da informática.",
                 R.drawable.ic_computador,
                 R.drawable.img_lab_informatica_2,
                 true,
@@ -146,7 +144,7 @@ public class SalaRepository {
                 "inicio_trilha",
                 "Início da trilha",
                 "Ponto de início do percurso",
-                "Local de início da trilha para explorar os espaços do campus.",
+                "Ponto de partida da trilha ecológica do campus, onde os visitantes podem explorar a natureza e conhecer um pouco mais da vegetação local.",
                 R.drawable.ic_trilha,
                 R.drawable.img_trilha,
                 true,
@@ -157,7 +155,7 @@ public class SalaRepository {
                 "sala_descanso",
                 "Sala de descanso",
                 "Espaço para descanso",
-                "Ambiente destinado ao descanso e ao bem-estar durante a rotina no campus.",
+                "Espaço reservado para descanso e relaxamento, oferecendo aos alunos um momento de pausa e tranquilidade durante a rotina no campus.",
                 R.drawable.ic_descanso,
                 R.drawable.img_lab_informatica_1,
                 true,
@@ -168,7 +166,7 @@ public class SalaRepository {
                 "sala_servidor",
                 "Sala de servidor",
                 "Espaço dos servidores",
-                "Ambiente destinado aos equipamentos e serviços de servidores do campus.",
+                "Espaço destinado aos equipamentos e serviços de servidores do campus, essenciais para o funcionamento dos sistemas e da infraestrutura tecnológica do IF.",
                 R.drawable.ic_servidor,
                 R.drawable.img_servidores,
                 false,
@@ -179,7 +177,7 @@ public class SalaRepository {
                 "frente_escola",
                 "Frente da escola",
                 "Entrada principal do campus",
-                "Vista da entrada principal do IFPB Campus Santa Luzia.",
+                "Seja bem-vindo ao IFPB Campus Santa Luzia! Este é o ponto de partida para explorar o campus e conhecer seus espaços, ambientes e tudo o que faz parte da nossa instituição. Vamos começar essa visita?",
                 R.drawable.ic_escola,
                 R.drawable.img_frente_escola,
                 true,
@@ -188,12 +186,11 @@ public class SalaRepository {
 
     }
 
+    // Busca as salas do andar escolhido.
     public static List<Sala> getSalasPorLocalizacao(Localizacao localizacao) {
         List<Sala> resultado = new ArrayList<>();
-
         for (int i = 0; i < TODAS_AS_SALAS.size(); i++) {
             Sala sala = TODAS_AS_SALAS.get(i);
-
             if (sala.getId().equals("inicio_trilha") || sala.getId().equals("sala_descanso") || sala.getId().equals("frente_escola") || sala.getId().equals("sala_servidor")) {
                 continue;
             }
@@ -201,19 +198,17 @@ public class SalaRepository {
                 resultado.add(sala);
             }
         }
-
         return resultado;
     }
 
+    // Encontra uma sala pelo seu ID.
     public static Sala getSalaPorId(String id) {
         for (int i = 0; i < TODAS_AS_SALAS.size(); i++) {
             Sala sala = TODAS_AS_SALAS.get(i);
-
             if (sala.getId().equals(id)) {
                 return sala;
             }
         }
         return null;
     }
-
 }

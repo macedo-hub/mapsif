@@ -16,7 +16,7 @@
         android:paddingBottom="32dp"
         tools:context=".DetalheSalaActivity">
 
-        <!-- CABEÇALHO -->
+        <!-- cabeçalho -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/headerContainer"
             android:layout_width="0dp"
@@ -57,7 +57,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- IMAGEM DO AMBIENTE -->
+        <!-- imagem -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardImagemSala"
             android:layout_width="0dp"
@@ -81,7 +81,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- BOTÃO DE VISUALIZAÇÃO 360° -->
+        <!-- botão 360° -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btnVisualizar360"
             android:layout_width="0dp"
@@ -116,7 +116,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- CARD DA DESCRIÇÃO -->
+        <!-- descrição -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardDescricao"
             android:layout_width="0dp"
@@ -142,9 +142,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

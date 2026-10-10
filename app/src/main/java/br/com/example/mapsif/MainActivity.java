@@ -10,7 +10,6 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -47,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
         Button columnBPrimeiroAndar = findViewById(R.id.columnBPrimeiroAndar);
         Button columnBTerreo = findViewById(R.id.columnBTerreo);
 
-        // Botões do menu lateral
+        //botões do menu lateral
         Button btnInicioTrilha = findViewById(R.id.btn_inicio_trilha);
         Button btnSalaDescanso = findViewById(R.id.btn_sala_descanso);
         Button btnSalaServidor = findViewById(R.id.btn_sala_servidor);
         Switch modoNoturnoSwitch = findViewById(R.id.modoNoturnoSwitch);
 
+        //salva modo escuro
         SharedPreferences preferencias = getSharedPreferences("configuracoes", MODE_PRIVATE);
         modoNoturnoSwitch.setChecked(preferencias.getBoolean("modo_escuro", false));
 
@@ -61,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
             if (ligado == jaSalvo) {
                 return; // nada mudou, não faz nada
             }
-
             preferencias.edit().putBoolean("modo_escuro", ligado).apply();
-
             if (ligado) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             } else {

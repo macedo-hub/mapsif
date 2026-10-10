@@ -15,7 +15,7 @@
         android:paddingBottom="24dp"
         tools:context=".SobreActivity">
 
-<!-- Cabeçalho -->
+        <!-- Cabeçalho -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/headerContainer"
             android:layout_width="0dp"
@@ -25,8 +25,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Botão de voltar -->
-<ImageButton
+            <!-- botão de voltar -->
+            <ImageButton
                  android:id="@+id/btnVoltarSobre"
                  android:layout_width="48dp"
                  android:layout_height="48dp"
@@ -39,7 +39,7 @@
                  app:layout_constraintTop_toTopOf="parent"
                  app:tint="@color/sobre_verde_primario" />
 
-            <!-- Título -->
+            <!-- título -->
             <TextView
                 android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
@@ -55,50 +55,50 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Logo -->
-<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:adjustViewBounds="true"
-    app:layout_constraintWidth_percent="0.4"
-    app:srcCompat="@drawable/geral_logo_mapsif"
-    tools:src="@android:drawable/ic_menu_report_image"
-    app:layout_constraintTop_toBottomOf="@id/headerContainer"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintWidth_percent="0.4"
+            app:srcCompat="@drawable/geral_logo_mapsif"
+            tools:src="@android:drawable/ic_menu_report_image"
+            app:layout_constraintTop_toBottomOf="@id/headerContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-<!-- Descrição -->
-<TextView
-    android:id="@+id/tvDescricao"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:text="O MapsIF é um guia interativo do campus IFPB Santa Luzia. Explore os ambientes dos blocos A e B através de fotos e visualizações 360°."
-    android:textColor="@color/sobre_texto_descricao"
-    android:textSize="17sp"
-    android:fontFamily="@font/poppins"
-    app:layout_constraintTop_toBottomOf="@id/imageView"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Descrição -->
+        <TextView
+            android:id="@+id/tvDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="O MapsIF é um guia interativo do campus IFPB Santa Luzia. Explore os ambientes dos blocos A e B através de fotos e visualizações 360°."
+            android:textColor="@color/sobre_texto_descricao"
+            android:textSize="17sp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-<!-- Título Desenvolvedores -->
-<TextView
-                 android:id="@+id/tvTituloDesenvolvedores"
-                 android:layout_width="0dp"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="24dp"
-                 android:layout_marginStart="24dp"
-                 android:layout_marginEnd="24dp"
-                 android:text="Desenvolvedores"
-                 android:textColor="@color/sobre_verde_primario"
-                 android:textSize="16sp"
-                 android:fontFamily="@font/poppins_semibold"
-                 app:layout_constraintTop_toBottomOf="@id/tvDescricao"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Título Desenvolvedores -->
+        <TextView
+            android:id="@+id/tvTituloDesenvolvedores"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Desenvolvedores"
+            android:textColor="@color/sobre_verde_primario"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toBottomOf="@id/tvDescricao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- CARD 1: Lucas Emanuel -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -125,7 +125,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
+            <TextView
                  android:id="@+id/tvNomeLucas"
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
                  app:layout_constraintTop_toTopOf="@id/imgFotoLucas"
                  app:layout_constraintEnd_toStartOf="@id/btnGithubLucas" />
 
-<TextView
+            <TextView
                  android:id="@+id/tvCargoLucas"
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
                  app:layout_constraintTop_toBottomOf="@id/tvNomeLucas"
                  app:layout_constraintEnd_toEndOf="@id/tvNomeLucas" />
 
-<!-- LinkedIn Lucas -->
+            <!-- LinkedIn Lucas -->
              <ImageView
                  android:id="@+id/btnLinkedinLucas"
                  android:layout_width="28dp"
@@ -292,31 +292,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/tvNomeOrientador"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="8dp"
-    android:text="Dr. Alexandre Costa"
-    android:textColor="@color/sobre_texto_primario"
-    android:textSize="15sp"
-    android:fontFamily="@font/poppins_semibold"
-    app:layout_constraintStart_toEndOf="@id/imgFotoOrientador"
-    app:layout_constraintTop_toTopOf="@id/imgFotoOrientador"
-    app:layout_constraintEnd_toStartOf="@id/btnGithubOrientador" />
+            <TextView
+                android:id="@+id/tvNomeOrientador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Dr. Alexandre Costa"
+                android:textColor="@color/sobre_texto_primario"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintStart_toEndOf="@id/imgFotoOrientador"
+                app:layout_constraintTop_toTopOf="@id/imgFotoOrientador"
+                app:layout_constraintEnd_toStartOf="@id/btnGithubOrientador" />
 
-<TextView
-    android:id="@+id/tvCargoOrientador"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Orientador de Projeto"
-    android:textColor="@color/sobre_texto_secundario"
-    android:textSize="12sp"
-    android:fontFamily="@font/poppins"
-    app:layout_constraintStart_toStartOf="@id/tvNomeOrientador"
-    app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
-    app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
+            <TextView
+                android:id="@+id/tvCargoOrientador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Orientador de Projeto"
+                android:textColor="@color/sobre_texto_secundario"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@id/tvNomeOrientador"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeOrientador"
+                app:layout_constraintEnd_toEndOf="@id/tvNomeOrientador" />
 
             <!-- LinkedIn Orientador -->
             <ImageView

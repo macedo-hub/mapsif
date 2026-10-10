@@ -21,36 +21,33 @@ import br.com.example.mapsif.model.Localizacao;
 import br.com.example.mapsif.model.Sala;
 
 public class ListaSalasActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lista_salas);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Busca a localização selecionada
+        //pega o andar que foi escolhido
         String localizacao = getIntent().getStringExtra("localizacao");
         Localizacao localizacaoEnum = Localizacao.valueOf(localizacao);
 
-        // Localiza a lista
+        //pega a lista de salas
         RecyclerView recyclerSalas = findViewById(R.id.recyclerSalas);
 
-        // Busca as salas daquele andar
+        //mostra as salas daquele andar
         List<Sala> salas = SalaRepository.getSalasPorLocalizacao(localizacaoEnum);
 
-        // Configura a lista
+        //onfigurca a lista
         recyclerSalas.setLayoutManager(new LinearLayoutManager(this));
         recyclerSalas.setAdapter(new SalaAdapter(this, salas, localizacao));
 
-        // Botão de voltar
+        //botão de voltar
         ImageButton btnVoltarLista = findViewById(R.id.btnVoltarLista);
-
         btnVoltarLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,4 +1,4 @@
- package br.com.example.mapsif;
+package br.com.example.mapsif;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -6,18 +6,15 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import br.com.example.mapsif.data.SalaRepository;
 import br.com.example.mapsif.model.Sala;
 
 public class DetalheSalaActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,28 +26,26 @@ public class DetalheSalaActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Busca os dados da sala
+        //pega o ID da sala escolhida
         String salaId = getIntent().getStringExtra("salaId");
         Sala sala = SalaRepository.getSalaPorId(salaId);
 
-        // Localiza os elementos da tela
+        //elementos da tela
         TextView txtTitulo = findViewById(R.id.txtTituloDetalhe);
         ImageView imgSala = findViewById(R.id.imgDetalheSala);
         TextView txtDescricao = findViewById(R.id.txtDescricaoDetalhe);
         ImageButton btnVoltarDetalhe = findViewById(R.id.btnVoltarDetalhe);
 
-        // Exibe os dados da sala
+        // Mostra as informações da sala
         txtTitulo.setText(sala.getTitulo());
         imgSala.setImageResource(sala.getImagem());
         txtDescricao.setText(sala.getDescricao());
 
-        // Botão de voltar
+        //botão de voltar
         btnVoltarDetalhe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String origem = getIntent().getStringExtra("origem");
-
                 if ("menu".equals(origem)) {
                     Intent intent = new Intent(DetalheSalaActivity.this, MainActivity.class);
                     startActivity(intent);

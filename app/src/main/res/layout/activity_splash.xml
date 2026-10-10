@@ -8,7 +8,7 @@
     android:background="@color/splash_fundo_video"
     tools:context=".SplashActivity">
 
-    <!-- Largura da tela toda; a altura se ajusta à proporção do vídeo (16:9) -->
+    <!-- vídeo da tela inicial -->
     <VideoView
         android:id="@+id/videoSplash"
         android:layout_width="0dp"

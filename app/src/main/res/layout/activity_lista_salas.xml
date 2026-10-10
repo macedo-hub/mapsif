@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +10,7 @@
     android:background="@color/sobre_branco_fundo"
     tools:context=".ListaSalasActivity">
 
-    <!-- Cabeçalho -->
+    <!-- cabeçalho -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
         android:layout_width="0dp"
@@ -19,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Botão voltar -->
+        <!-- botão voltar -->
         <ImageButton
             android:id="@+id/btnVoltarLista"
             android:layout_width="48dp"
@@ -33,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Título -->
+        <!-- título -->
         <TextView
             android:id="@+id/txtTituloLista"
             android:layout_width="0dp"
@@ -53,7 +54,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Texto de orientação -->
+    <!-- texto de orientação -->
     <TextView
         android:id="@+id/txtSubtituloLista"
         android:layout_width="0dp"
@@ -69,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Lista de ambientes -->
+    <!-- lista de ambientes -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSalas"
         android:layout_width="0dp"
@@ -83,5 +84,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_sala" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

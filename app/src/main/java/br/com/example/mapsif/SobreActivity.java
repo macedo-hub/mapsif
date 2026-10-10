@@ -12,7 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SobreActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class SobreActivity extends AppCompatActivity {
 
         // Botão de voltar
         ImageButton btnVoltarSobre = findViewById(R.id.btnVoltarSobre);
-
         if (btnVoltarSobre != null) {
             btnVoltarSobre.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -53,10 +51,9 @@ public class SobreActivity extends AppCompatActivity {
         abrirLink(R.id.cardGithubProjeto, "https://github.com/macedo-hub/mapsif");
     }
 
-    // Método para abrir o link ao clicar no botão
+    //abre o link
     private void abrirLink(int idDoElemento, String url) {
         View elemento = findViewById(idDoElemento);
-
         if (elemento != null) {
             elemento.setOnClickListener(new View.OnClickListener() {
                 @Override
