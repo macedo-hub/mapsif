@@ -56,5 +56,16 @@ public class DetalheSalaActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //botão 360
+        View btnVisualizar360 = findViewById(R.id.btnVisualizar360);
+        btnVisualizar360.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetalheSalaActivity.this, Panorama360Activity.class);
+                intent.putExtra("salaId", getIntent().getStringExtra("salaId"));
+                startActivity(intent);
+            }
+        });
     }
 }

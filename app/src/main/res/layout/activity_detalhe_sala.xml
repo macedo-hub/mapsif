@@ -81,42 +81,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- botão 360° -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnVisualizar360"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:background="@drawable/sobre_btn_contorno"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Visualizar ambiente em 360 graus"
-            app:layout_constraintTop_toBottomOf="@id/cardImagemSala"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <TextView
-                android:id="@+id/txtVisualizar360"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="360°  Visualizar ambiente"
-                android:textColor="@color/sobre_verde_primario"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppins_semibold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- descrição -->
+        <!-- descrição (agora logo abaixo da imagem) -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardDescricao"
             android:layout_width="0dp"
@@ -126,7 +91,7 @@
             android:layout_marginEnd="20dp"
             android:padding="20dp"
             android:background="@drawable/geral_bg_card"
-            app:layout_constraintTop_toBottomOf="@id/btnVisualizar360"
+            app:layout_constraintTop_toBottomOf="@id/cardImagemSala"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -142,6 +107,41 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- botão 360° (agora embaixo da descrição) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnVisualizar360"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:background="@drawable/sobre_btn_contorno"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Visualizar ambiente em 360 graus"
+            app:layout_constraintTop_toBottomOf="@id/cardDescricao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/txtVisualizar360"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver em 360°"
+                android:textColor="@color/sobre_verde_primario"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

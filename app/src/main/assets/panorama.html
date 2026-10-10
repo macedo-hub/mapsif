@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="pannellum/pannellum.css">
+    <script src="pannellum/pannellum.js"></script>
+    <style>
+        html, body, #panorama { width: 100%; height: 100%; margin: 0; background: #000; }
+
+        body.claro  { --fundo: rgba(255,255,255,0.92); --icone: #3C8C43; }
+        body.escuro { --fundo: rgba(18,18,18,0.88);    --icone: #66BB6A; }
+
+        #botoes { position: fixed; top: 12px; right: 12px; z-index: 10; }
+        #botoes button {
+          display: block; width: 44px; height: 44px; margin-bottom: 10px;
+          border: 2px solid var(--icone); border-radius: 50%;
+          background: var(--fundo); color: var(--icone);
+          font-size: 26px; line-height: 1; padding: 0;
+        }
+        #botoes button svg { width: 24px; height: 24px; fill: var(--icone); }
+        #botoes button.ativo { background: var(--icone); }
+        #botoes button.ativo svg { fill: #fff; }
+    </style>
+</head>
+<body>
+<div id="panorama"></div>
+
+<div id="botoes">
+    <button id="btnMais">+</button>
+    <button id="btnMenos">−</button>
+    <button id="btnGiro">
+        <svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.99 8.99 0 0013 3.06V1h-2v2.06A8.99 8.99 0 003.06 11H1v2h2.06A8.99 8.99 0 0011 20.94V23h2v-2.06A8.99 8.99 0 0020.94 13H23v-2h-2.06zM12 19a7 7 0 110-14 7 7 0 010 14z"/></svg>
+    </button>
+</div>
+
+<script>
+    var params = new URLSearchParams(location.search);
+    var arquivo = params.get("imagem");
+    document.body.className = params.get("modo") === "escuro" ? "escuro" : "claro";
+
+    var viewer = pannellum.viewer("panorama", {
+      type: "equirectangular",
+      panorama: "panoramas/" + arquivo,
+      autoLoad: true,
+      showControls: false
+    });
+
+    document.getElementById("btnMais").onclick = function () {
+      viewer.setHfov(viewer.getHfov() - 10);
+    };
+    document.getElementById("btnMenos").onclick = function () {
+      viewer.setHfov(viewer.getHfov() + 10);
+    };
+
+    var btnGiro = document.getElementById("btnGiro");
+    if (!window.DeviceOrientationEvent) {
+      btnGiro.style.display = "none";
+    }
+    btnGiro.onclick = function () {
+      if (viewer.isOrientationActive()) {
+        viewer.stopOrientation();
+        btnGiro.classList.remove("ativo");
+      } else {
+        viewer.startOrientation();
+        btnGiro.classList.add("ativo");
+      }
+    };
+</script>
+</body>
+</html>
