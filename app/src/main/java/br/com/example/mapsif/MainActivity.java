@@ -6,16 +6,20 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import android.content.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton menuButton;
@@ -47,6 +51,25 @@ public class MainActivity extends AppCompatActivity {
         Button btnInicioTrilha = findViewById(R.id.btn_inicio_trilha);
         Button btnSalaDescanso = findViewById(R.id.btn_sala_descanso);
         Button btnSalaServidor = findViewById(R.id.btn_sala_servidor);
+        Switch modoNoturnoSwitch = findViewById(R.id.modoNoturnoSwitch);
+
+        SharedPreferences preferencias = getSharedPreferences("configuracoes", MODE_PRIVATE);
+
+        // Deixa o switch igual à escolha salva (antes de ligar o listener)
+        modoNoturnoSwitch.setChecked(preferencias.getBoolean("modo_escuro", false));
+
+        modoNoturnoSwitch.setOnCheckedChangeListener((botao, ligado) -> {
+            // Salva a escolha para a próxima vez que o app abrir
+            preferencias.edit().putBoolean("modo_escuro", ligado).apply();
+
+            if (ligado) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        });
+
+
 
         // sobre
         sobreButton.setOnClickListener(v -> {

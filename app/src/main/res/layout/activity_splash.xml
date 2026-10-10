@@ -5,22 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sobre_verde_claro_header"
+    android:background="@color/splash_fundo_video"
     tools:context=".SplashActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <!-- Largura da tela toda; a altura se ajusta à proporção do vídeo (16:9) -->
+    <VideoView
+        android:id="@+id/videoSplash"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="302dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="282dp"
-        android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/geral_logo_mapsif" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

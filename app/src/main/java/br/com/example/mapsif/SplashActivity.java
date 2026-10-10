@@ -1,34 +1,48 @@
 package br.com.example.mapsif;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Lê a escolha salva e aplica o modo ANTES de montar a tela
+        boolean modoEscuro = getSharedPreferences("configuracoes", MODE_PRIVATE)
+                .getBoolean("modo_escuro", false);
+
+        if (modoEscuro) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        // Aguarda 2 segundos (2000 ms) e redireciona para a MainActivity
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish(); // Fecha a SplashActivity para impedir o retorno a ela pelo botão voltar
-        }, 2000);
+        // Escolhe o vídeo conforme a escolha do app (não a do celular)
+        int idDoVideo;
+        if (modoEscuro) {
+            idDoVideo = R.raw.splash_video_fundo_escuro;
+        } else {
+            idDoVideo = R.raw.splash_video_fundo_claro;
+        }
+
+        VideoView videoSplash = findViewById(R.id.videoSplash);
+        videoSplash.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + idDoVideo));
+        videoSplash.setOnCompletionListener(videoTocado -> abrirTelaPrincipal());
+        videoSplash.start();
+    }
+
+    private void abrirTelaPrincipal() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -77,7 +77,7 @@
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp"
     android:text="O MapsIF é um guia interativo do campus IFPB Santa Luzia. Explore os ambientes dos blocos A e B através de fotos e visualizações 360°."
-    android:textColor="#4A4A4A"
+    android:textColor="@color/sobre_texto_descricao"
     android:textSize="17sp"
     android:fontFamily="@font/poppins"
     app:layout_constraintTop_toBottomOf="@id/imageView"

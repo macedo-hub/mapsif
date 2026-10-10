@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="10dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/main_verde_claro_fundo_card"
+    app:cardCornerRadius="14dp"
     app:cardElevation="2dp"
     app:strokeColor="@color/sobre_verde_primario"
     app:strokeWidth="1dp">
@@ -21,15 +20,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="10dp">
+        android:minHeight="64dp"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/imgIconeSala"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="14dp"
             android:contentDescription="@null"
             tools:src="@drawable/ic_biblioteca" />
 
@@ -43,9 +43,9 @@
                 android:id="@+id/txtTituloSala"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/sobre_texto_primario"
-                android:textSize="14sp"
-                android:textStyle="bold"
+                android:textSize="15sp"
                 tools:text="Biblioteca" />
 
             <TextView
@@ -53,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:fontFamily="@font/poppins"
                 android:textColor="@color/sobre_texto_secundario"
                 android:textSize="12sp"
                 tools:text="Acervo e sala de estudos" />

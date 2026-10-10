@@ -8,345 +8,432 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <!-- TELA PRINCIPAL -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <!-- Imagem de fundo -->
-    <ImageView
-        android:id="@+id/backgroundImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/main_bg_mapsif"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Imagem de fundo -->
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_bg_mapsif_fundo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Sobreposição escura (scrim) -->
+        <!-- Degradê suave atrás dos textos do topo -->
+        <View
+            android:id="@+id/degradeTopo"
+            android:layout_width="0dp"
+            android:layout_height="340dp"
+            android:background="@drawable/main_degrade_topo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botão de menu (esquerda) -->
-    <View
-        android:id="@+id/scrim"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#55000000"
-        app:layout_constraintBottom_toBottomOf="@id/backgroundImage"
-        app:layout_constraintEnd_toEndOf="@id/backgroundImage"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/backgroundImage"
-        app:layout_constraintTop_toTopOf="@id/backgroundImage"
-        app:layout_constraintVertical_bias="0.0" />
+        <!-- Botão de menu (esquerda) -->
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/main_ic_menu"
+            android:background="@drawable/main_btn_arredondado"
+            android:contentDescription="Botão de menu lateral"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#33FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/menuButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-         android:layout_marginStart="16dp"
-         android:layout_marginTop="16dp"
-         android:src="@drawable/main_ic_menu"
-         android:background="@drawable/main_btn_arredondado"
-        android:contentDescription="Botão de menu lateral"
-        android:textSize="24sp"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#33FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Botão Sobre (direita) com ícone de informação -->
+        <ImageButton
+            android:id="@+id/sobreButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/main_btn_arredondado"
+            android:backgroundTint="#33FFFFFF"
+            android:contentDescription="Botão de sobre"
+            android:drawablePadding="4dp"
+            android:src="@drawable/main_ic_info"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Botão Sobre (direita) com ícone de informação -->
-    <ImageButton
-        android:id="@+id/sobreButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-         android:background="@drawable/main_btn_arredondado"
-         android:backgroundTint="#33FFFFFF"
-         android:contentDescription="Botão de sobre"
-         android:drawablePadding="4dp"
-         android:src="@drawable/main_ic_info"
-         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Logotipo centralizado entre os botões -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_logo_mapsif"
+            android:contentDescription="Logo do Maps IF"
+            app:layout_constraintStart_toEndOf="@id/menuButton"
+            app:layout_constraintEnd_toStartOf="@id/sobreButton"
+            app:layout_constraintTop_toTopOf="@id/menuButton"
+            app:layout_constraintBottom_toBottomOf="@id/menuButton" />
 
-    <!-- Logotipo centralizado entre os botões -->
-<ImageView
-         android:id="@+id/logoImageView"
-         android:layout_width="0dp"
-         android:layout_height="38dp"
-         android:scaleType="fitCenter"
-         android:src="@drawable/logo_mapsif_branca"
-         android:contentDescription="Logo do Maps IF"
-         app:layout_constraintStart_toEndOf="@id/menuButton"
-         app:layout_constraintEnd_toStartOf="@id/sobreButton"
-         app:layout_constraintTop_toTopOf="@id/menuButton"
-         app:layout_constraintBottom_toBottomOf="@id/menuButton" />
-
-    <!-- Título -->
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:text="Guia de Ambientes"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
-
-    <!-- Subtítulo -->
-    <TextView
-        android:id="@+id/subtitleTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:text="Navegue pelos blocos do campus IFPB Santa Luzia explore laboratórios, biblioteca e muito mais."
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
-
-    <!-- Card da Coluna A -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/columnA"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/columnB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="18dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <!-- Título -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="12dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins"
+            android:shadowColor="@color/main_sombra_sobre_foto"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Guia de Ambientes"
+            android:textColor="@color/main_titulo_sobre_foto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoImageView" />
 
-<View
-                 android:id="@+id/indicatorA"
-                 android:layout_width="4dp"
-                 android:layout_height="16dp"
-                 android:background="@color/main_verde_escuro_indicador"
-                 app:layout_constraintTop_toTopOf="parent"
-                 app:layout_constraintStart_toStartOf="parent" />
-
-<TextView
-                 android:id="@+id/columnATitle"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_marginStart="8dp"
-                 android:fontFamily="@font/poppins_bold"
-                 android:text="Bloco A"
-                 android:textColor="@color/main_verde_escuro_indicador"
-                 android:textSize="18sp"
-                 android:textStyle="bold"
-                 app:layout_constraintBottom_toBottomOf="@id/indicatorA"
-                 app:layout_constraintStart_toEndOf="@id/indicatorA"
-                 app:layout_constraintTop_toTopOf="@id/indicatorA" />
-
-<Button
-                   android:id="@+id/columnAPrimeiroAndar"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:text="1º Andar"
-                   android:background="@drawable/main_btn_pisos"
-                   app:backgroundTint="@color/main_verde_escuro_indicador"
-                 android:textColor="@android:color/white"
-                 app:layout_constraintTop_toBottomOf="@id/columnATitle"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 android:layout_marginTop="8dp" />
-
-<Button
-                   android:id="@+id/columnATerreo"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:text="Térreo"
-                   android:background="@drawable/main_btn_pisos"
-                   app:backgroundTint="@color/main_verde_escuro_indicador"
-                 android:textColor="@android:color/white"
-                 app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 android:layout_marginTop="8dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Card da Coluna B -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/columnB"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/columnA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="22dp"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <!-- Subtítulo -->
+        <TextView
+            android:id="@+id/subtitleTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="12dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins"
+            android:shadowColor="@color/main_sombra_sobre_foto"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Navegue pelos blocos do campus IFPB Santa Luzia explore laboratórios, biblioteca e muito mais."
+            android:textColor="@color/main_texto_sobre_foto"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
-<View
-                 android:id="@+id/indicatorB"
-                 android:layout_width="4dp"
-                 android:layout_height="16dp"
-                 android:background="@color/main_verde_escuro_indicador"
-                 app:layout_constraintTop_toTopOf="parent"
-                 app:layout_constraintStart_toStartOf="parent" />
+        <!-- Card da Coluna A -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/columnA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/columnB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/main_verde_claro_fundo_card"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
 
-<TextView
-                 android:id="@+id/columnBTitle"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_marginStart="8dp"
-                 android:fontFamily="@font/poppins_bold"
-                 android:text="Bloco B"
-                 android:textColor="@color/main_verde_escuro_indicador"
-                 android:textSize="18sp"
-                 android:textStyle="bold"
-                 app:layout_constraintBottom_toBottomOf="@id/indicatorB"
-                 app:layout_constraintStart_toEndOf="@id/indicatorB"
-                 app:layout_constraintTop_toTopOf="@id/indicatorB" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
 
-<Button
-                   android:id="@+id/columnBPrimeiroAndar"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:text="1º Andar"
-                   android:background="@drawable/main_btn_pisos"
-                   app:backgroundTint="@color/main_verde_escuro_indicador"
-                 android:textColor="@android:color/white"
-                 app:layout_constraintTop_toBottomOf="@id/columnBTitle"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 android:layout_marginTop="8dp" />
+                <View
+                    android:id="@+id/indicatorA"
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:background="@color/main_verde_escuro_indicador"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-<Button
-                   android:id="@+id/columnBTerreo"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:text="Térreo"
-                   android:background="@drawable/main_btn_pisos"
-                   app:backgroundTint="@color/main_verde_escuro_indicador"
-                 android:textColor="@android:color/white"
-                 app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 android:layout_marginTop="8dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/columnATitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Bloco A"
+                    android:textColor="@color/main_verde_escuro_indicador"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/indicatorA"
+                    app:layout_constraintStart_toEndOf="@id/indicatorA"
+                    app:layout_constraintTop_toTopOf="@id/indicatorA" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/columnAPrimeiroAndar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1º Andar"
+                    android:background="@drawable/main_btn_pisos"
+                    app:backgroundTint="@color/main_verde_escuro_indicador"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@id/columnATitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/columnATerreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Térreo"
+                    android:background="@drawable/main_btn_pisos"
+                    app:backgroundTint="@color/main_verde_escuro_indicador"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@id/columnAPrimeiroAndar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card da Coluna B -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/columnB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/columnA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="22dp"
+            app:cardBackgroundColor="@color/main_verde_claro_fundo_card"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <View
+                    android:id="@+id/indicatorB"
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:background="@color/main_verde_escuro_indicador"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/columnBTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Bloco B"
+                    android:textColor="@color/main_verde_escuro_indicador"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/indicatorB"
+                    app:layout_constraintStart_toEndOf="@id/indicatorB"
+                    app:layout_constraintTop_toTopOf="@id/indicatorB" />
+
+                <Button
+                    android:id="@+id/columnBPrimeiroAndar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1º Andar"
+                    android:background="@drawable/main_btn_pisos"
+                    app:backgroundTint="@color/main_verde_escuro_indicador"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@id/columnBTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/columnBTerreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Térreo"
+                    android:background="@drawable/main_btn_pisos"
+                    app:backgroundTint="@color/main_verde_escuro_indicador"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@id/columnBPrimeiroAndar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <!-- MENU LATERAL -->
     <LinearLayout
         android:id="@+id/menu_lateral"
-        android:layout_width="225dp"
+        android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/cor_branca"
+        android:background="@color/sobre_branco_fundo"
+        android:clickable="true"
+        android:focusable="true"
         android:orientation="vertical">
 
-        <ImageView
+        <!-- Cabeçalho com logo -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="40dp"
-            android:contentDescription="Logo MapsIF"
-            android:scaleType="centerInside"
-            android:src="@drawable/logo_mapsif_verde" />
+            android:layout_height="wrap_content"
+            android:background="@color/sobre_verde_claro_header"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp">
 
-        <!-- linha -->
-        <View
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:contentDescription="Logo MapsIF"
+                android:scaleType="centerInside"
+                android:src="@drawable/main_logo_mapsif" />
+        </LinearLayout>
+
+        <!-- Título da seção com indicador -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/main_verde_escuro_indicador" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="18dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Explorar mais"
-            android:textColor="@color/main_verde_escuro_indicador"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <View
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:background="@color/sobre_verde_primario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Explorar mais"
+                android:textColor="@color/sobre_verde_primario"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Botão: Início da trilha -->
         <Button
             android:id="@+id/btn_inicio_trilha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="20dp"
-            android:padding="12dp"
-            android:background="@drawable/main_btn_arredondado"
-            android:text="Início da trilha"
-            android:textColor="@color/main_ic_lateral"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/geral_bg_card"
             android:drawableStart="@drawable/ic_trilha"
-            android:drawablePadding="8dp" />
+            android:drawableTint="@color/sobre_verde_primario"
+            android:drawablePadding="14dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start|center_vertical"
+            android:minWidth="0dp"
+            android:minHeight="52dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:stateListAnimator="@null"
+            android:text="Início da trilha"
+            android:textAllCaps="false"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="14sp"
+            app:backgroundTint="@null" />
 
+        <!-- Botão: Sala de descanso -->
         <Button
             android:id="@+id/btn_sala_descanso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:padding="12dp"
-            android:background="@drawable/main_btn_arredondado"
-            android:text="Sala de descanso"
-            android:textColor="@color/main_ic_lateral"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/geral_bg_card"
             android:drawableStart="@drawable/ic_descanso"
-            android:drawablePadding="8dp" />
+            android:drawableTint="@color/sobre_verde_primario"
+            android:drawablePadding="14dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start|center_vertical"
+            android:minWidth="0dp"
+            android:minHeight="52dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:stateListAnimator="@null"
+            android:text="Sala de descanso"
+            android:textAllCaps="false"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="14sp"
+            app:backgroundTint="@null" />
 
+        <!-- Botão: Sala de servidor -->
         <Button
             android:id="@+id/btn_sala_servidor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:padding="12dp"
-            android:background="@drawable/main_btn_arredondado"
-            android:text="Sala de servidor"
-            android:textColor="@color/main_ic_lateral"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/geral_bg_card"
             android:drawableStart="@drawable/ic_servidor"
-            android:drawablePadding="8dp" />
+            android:drawableTint="@color/sobre_verde_primario"
+            android:drawablePadding="14dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start|center_vertical"
+            android:minWidth="0dp"
+            android:minHeight="52dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:stateListAnimator="@null"
+            android:text="Sala de servidor"
+            android:textAllCaps="false"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="14sp"
+            app:backgroundTint="@null" />
 
+        <!-- Espaço flexível: empurra o rodapé para o fim da barra -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+        <!-- Linha divisória suave -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.3"
+            android:background="@color/sobre_verde_primario" />
+
+        <!-- Switch de modo escuro (apenas visual por enquanto) -->
+        <Switch
+            android:id="@+id/modoNoturnoSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/geral_bg_card"
+            android:fontFamily="@font/poppins_semibold"
+            android:minHeight="52dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:text="Modo escuro"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- MainActivity colors -->
+    <color name="main_verde_escuro_indicador">#388E3C</color>
+    <color name="main_verde_claro_fundo_card">#1F2A20</color>
+    <color name="main_verde_borda_card">#2F4A31</color>
+    <color name="main_texto_primario">#EEEEEE</color>
+    <color name="main_texto_secundario">#B0B0B0</color>
+
+    <!-- SobreActivity colors -->
+    <color name="sobre_branco_fundo">#FF121212</color>
+    <color name="sobre_verde_claro_header">#1B2E1D</color>
+    <color name="sobre_verde_primario">#66BB6A</color>
+    <color name="sobre_texto_primario">#EEEEEE</color>
+    <color name="sobre_texto_secundario">#B0B0B0</color>
+    <color name="sobre_texto_descricao">#CFCFCF</color>
+
+    <!-- SplashActivity colors -->
+    <color name="splash_fundo_video">#FF292929</color>
+
+    <!-- Textos e logo sobre a foto da tela principal -->
+    <color name="main_titulo_sobre_foto">#FFFFFFFF</color>
+    <color name="main_texto_sobre_foto">#FFFFFFFF</color>
+    <color name="main_degrade_topo_inicio">#00000000</color>
+    <color name="main_degrade_topo_fim">#00000000</color>
+    <color name="main_sombra_sobre_foto">#FF000000</color>
+    <drawable name="main_logo_mapsif">@drawable/logo_mapsif_branca</drawable>
+</resources>

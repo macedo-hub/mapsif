@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,7 +14,6 @@
         android:id="@+id/headerContainer"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginTop="24dp"
         android:background="@color/sobre_verde_claro_header"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,13 +33,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Título do andar -->
+        <!-- Título -->
         <TextView
             android:id="@+id/txtTituloLista"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="12dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Ambientes"
             android:textColor="@color/sobre_texto_primario"
@@ -60,9 +58,9 @@
         android:id="@+id/txtSubtituloLista"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/poppins"
         android:text="Escolha um ambiente para conhecer mais."
         android:textColor="@color/sobre_texto_secundario"
@@ -77,10 +75,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        android:paddingStart="24dp"
         android:paddingTop="12dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp"
+        android:paddingBottom="12dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/txtSubtituloLista"
         app:layout_constraintBottom_toBottomOf="parent"
