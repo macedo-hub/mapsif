@@ -31,4 +31,6 @@
     <color name="main_degrade_topo_fim">#00FFFFFF</color>
     <color name="main_sombra_sobre_foto">#CCFFFFFF</color>
     <drawable name="main_logo_mapsif">@drawable/logo_mapsif_verde</drawable>
+
+    <color name="geral_icone">#FF2E7D32</color>
 </resources>
