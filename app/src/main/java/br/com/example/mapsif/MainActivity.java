@@ -163,5 +163,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //frente da escola
+        Button btnFrenteEscola = findViewById(R.id.btn_frente_escola);
+        btnFrenteEscola.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
+                intent.putExtra("salaId", "frente_escola");
+                intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
+                intent.putExtra("origem", "menu");
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+            }
+        });
     }
 }

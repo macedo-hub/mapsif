@@ -20,7 +20,7 @@ public class SalaRepository {
                 "Laboratório de Informática 1",
                 "Aulas práticas de programação",
                 "O Laboratório de Informática 1 possui 20 computadores disponíveis para aulas práticas e uso livre dos alunos.",
-                R.drawable.ic_energias,
+                R.drawable.ic_computador,
                 R.drawable.img_lab_informatica_1,
                 true,
                 Localizacao.BLOCO_A_PRIMEIRO_ANDAR
@@ -133,7 +133,7 @@ public class SalaRepository {
                 "Laboratório de Informática 2",
                 "Espaço para atividades de informática",
                 "Espaço destinado às atividades práticas e projetos relacionados à informática.",
-                R.drawable.ic_energias,
+                R.drawable.ic_computador,
                 R.drawable.img_lab_informatica_2,
                 true,
                 Localizacao.BLOCO_B_PRIMEIRO_ANDAR
@@ -175,13 +175,28 @@ public class SalaRepository {
                 Localizacao.BLOCO_A_PRIMEIRO_ANDAR
         ));
 
+        TODAS_AS_SALAS.add(new Sala(
+                "frente_escola",
+                "Frente da escola",
+                "Entrada principal do campus",
+                "Vista da entrada principal do IFPB Campus Santa Luzia.",
+                R.drawable.ic_escola,
+                R.drawable.img_frente_escola,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
+
     }
+
     public static List<Sala> getSalasPorLocalizacao(Localizacao localizacao) {
         List<Sala> resultado = new ArrayList<>();
 
         for (int i = 0; i < TODAS_AS_SALAS.size(); i++) {
             Sala sala = TODAS_AS_SALAS.get(i);
 
+            if (sala.getId().equals("inicio_trilha") || sala.getId().equals("sala_descanso") || sala.getId().equals("frente_escola") || sala.getId().equals("sala_servidor")) {
+                continue;
+            }
             if (sala.getLocalizacao() == localizacao) {
                 resultado.add(sala);
             }
@@ -189,6 +204,7 @@ public class SalaRepository {
 
         return resultado;
     }
+
     public static Sala getSalaPorId(String id) {
         for (int i = 0; i < TODAS_AS_SALAS.size(); i++) {
             Sala sala = TODAS_AS_SALAS.get(i);

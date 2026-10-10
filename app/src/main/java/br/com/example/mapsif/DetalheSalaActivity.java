@@ -48,15 +48,6 @@ public class DetalheSalaActivity extends AppCompatActivity {
         btnVoltarDetalhe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ListaSalasActivity.class);
-                intent.putExtra("localizacao", getIntent().getStringExtra("localizacao"));
-                startActivity(intent);
-            }
-        });
-        // Botão de voltar
-        btnVoltarDetalhe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
                 String origem = getIntent().getStringExtra("origem");
 
