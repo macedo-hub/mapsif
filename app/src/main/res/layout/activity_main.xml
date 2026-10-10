@@ -433,7 +433,8 @@
             android:paddingBottom="12dp"
             android:text="Modo escuro"
             android:textColor="@color/sobre_texto_primario"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:saveEnabled="false"/>
 
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

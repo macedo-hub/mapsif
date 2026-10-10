@@ -54,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
         Switch modoNoturnoSwitch = findViewById(R.id.modoNoturnoSwitch);
 
         SharedPreferences preferencias = getSharedPreferences("configuracoes", MODE_PRIVATE);
-
-        // Deixa o switch igual à escolha salva (antes de ligar o listener)
         modoNoturnoSwitch.setChecked(preferencias.getBoolean("modo_escuro", false));
 
         modoNoturnoSwitch.setOnCheckedChangeListener((botao, ligado) -> {
-            // Salva a escolha para a próxima vez que o app abrir
+            boolean jaSalvo = preferencias.getBoolean("modo_escuro", false);
+            if (ligado == jaSalvo) {
+                return; // nada mudou, não faz nada
+            }
+
             preferencias.edit().putBoolean("modo_escuro", ligado).apply();
 
             if (ligado) {
