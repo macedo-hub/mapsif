@@ -428,6 +428,33 @@
             android:textSize="14sp"
             app:backgroundTint="@null" />
 
+        <!-- botão do corredor entre os blocos -->
+        <Button
+            android:id="@+id/btn_corredor_blocos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/geral_bg_card"
+            android:drawableStart="@drawable/ic_diretoria"
+            android:drawableTint="@color/sobre_verde_primario"
+            android:drawablePadding="14dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start|center_vertical"
+            android:minWidth="0dp"
+            android:minHeight="52dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:stateListAnimator="@null"
+            android:text="Corredor entre os blocos"
+            android:textAllCaps="false"
+            android:textColor="@color/sobre_texto_primario"
+            android:textSize="14sp"
+            app:backgroundTint="@null" />
+
 
         <!-- espaço antes do rodapé -->
         <View

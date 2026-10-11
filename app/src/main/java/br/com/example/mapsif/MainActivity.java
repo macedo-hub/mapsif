@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnInicioTrilha = findViewById(R.id.btn_inicio_trilha);
         Button btnSalaDescanso = findViewById(R.id.btn_sala_descanso);
         Button btnSalaServidor = findViewById(R.id.btn_sala_servidor);
+        Button btnCorredorBlocos = findViewById(R.id.btn_corredor_blocos);
         Switch modoNoturnoSwitch = findViewById(R.id.modoNoturnoSwitch);
 
         //salva modo escuro
@@ -169,6 +170,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
                 intent.putExtra("salaId", "frente_escola");
+                intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
+                intent.putExtra("origem", "menu");
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+            }
+        });
+
+        // Corredor entre os blocos
+        btnCorredorBlocos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DetalheSalaActivity.class);
+                intent.putExtra("salaId", "corredor_blocos");
                 intent.putExtra("localizacao", "BLOCO_A_PRIMEIRO_ANDAR");
                 intent.putExtra("origem", "menu");
                 startActivity(intent);

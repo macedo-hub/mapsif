@@ -102,6 +102,17 @@ public class SalaRepository {
                 Localizacao.BLOCO_A_TERREO
         ));
 
+        TODAS_AS_SALAS.add(new Sala(
+                "sala_diretor_geral",
+                "Sala do Diretor-Geral",
+                "Direção-Geral do campus",
+                "Espaço destinado às atividades e ao atendimento da Direção-Geral do IFPB Campus Santa Luzia.",
+                R.drawable.ic_diretoria,
+                R.drawable.img_diretor_geral,
+                false,
+                Localizacao.BLOCO_B_PRIMEIRO_ANDAR
+        ));
+
         // ==================== BLOCO B — TÉRREO ====================
         TODAS_AS_SALAS.add(new Sala(
                 "biblioteca",
@@ -183,6 +194,16 @@ public class SalaRepository {
                 true,
                 Localizacao.BLOCO_A_PRIMEIRO_ANDAR
         ));
+        TODAS_AS_SALAS.add(new Sala(
+                "corredor_blocos",
+                "Corredor entre os blocos",
+                "Ligação entre os blocos A e B",
+                "Espaço de circulação que conecta os blocos A e B do IFPB Campus Santa Luzia, permitindo o deslocamento entre os ambientes.",
+                R.drawable.ic_diretoria,
+                R.drawable.img_corredor_blocos,
+                true,
+                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+        ));
 
     }
 
@@ -191,7 +212,7 @@ public class SalaRepository {
         List<Sala> resultado = new ArrayList<>();
         for (int i = 0; i < TODAS_AS_SALAS.size(); i++) {
             Sala sala = TODAS_AS_SALAS.get(i);
-            if (sala.getId().equals("inicio_trilha") || sala.getId().equals("sala_descanso") || sala.getId().equals("frente_escola") || sala.getId().equals("sala_servidor")) {
+            if (sala.getId().equals("inicio_trilha") || sala.getId().equals("sala_descanso") || sala.getId().equals("frente_escola") || sala.getId().equals("corredor_blocos") || sala.getId().equals("sala_servidor")) {
                 continue;
             }
             if (sala.getLocalizacao() == localizacao) {
