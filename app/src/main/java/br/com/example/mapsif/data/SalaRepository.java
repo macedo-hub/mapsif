@@ -102,17 +102,6 @@ public class SalaRepository {
                 Localizacao.BLOCO_A_TERREO
         ));
 
-        TODAS_AS_SALAS.add(new Sala(
-                "sala_diretor_geral",
-                "Sala do Diretor-Geral",
-                "Direção-Geral do campus",
-                "Espaço destinado às atividades e ao atendimento da Direção-Geral do IFPB Campus Santa Luzia.",
-                R.drawable.ic_diretoria,
-                R.drawable.img_diretor_geral,
-                false,
-                Localizacao.BLOCO_B_PRIMEIRO_ANDAR
-        ));
-
         // ==================== BLOCO B — TÉRREO ====================
         TODAS_AS_SALAS.add(new Sala(
                 "biblioteca",
@@ -148,6 +137,28 @@ public class SalaRepository {
                 Localizacao.BLOCO_B_PRIMEIRO_ANDAR
         ));
 
+        TODAS_AS_SALAS.add(new Sala(
+                "auditorio",
+                "Auditório",
+                "Espaço para eventos e apresentações",
+                "O Auditório é um espaço destinado à realização de apresentações, palestras, reuniões e outros eventos acadêmicos, contribuindo para a troca de conhecimentos e a realização de atividades no campus.",
+                R.drawable.ic_auditorio,
+                R.drawable.img_auditorio,
+                true,
+                Localizacao.BLOCO_B_PRIMEIRO_ANDAR
+        ));
+
+        TODAS_AS_SALAS.add(new Sala(
+                "sala_diretor_geral",
+                "Sala do Diretor-Geral",
+                "Direção-Geral do campus",
+                "Espaço destinado às atividades e ao atendimento da Direção-Geral do IFPB Campus Santa Luzia.",
+                R.drawable.ic_diretoria,
+                R.drawable.img_diretor_geral,
+                false,
+                Localizacao.BLOCO_B_PRIMEIRO_ANDAR
+        ));
+
 
         // ==================== MENU LATERAL ====================
 
@@ -159,7 +170,7 @@ public class SalaRepository {
                 R.drawable.ic_trilha,
                 R.drawable.img_trilha,
                 true,
-                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+                Localizacao.BLOCO_A_TERREO
         ));
 
         TODAS_AS_SALAS.add(new Sala(
@@ -168,9 +179,9 @@ public class SalaRepository {
                 "Espaço para descanso",
                 "Espaço reservado para descanso e relaxamento, oferecendo aos alunos um momento de pausa e tranquilidade durante a rotina no campus.",
                 R.drawable.ic_descanso,
-                R.drawable.img_lab_informatica_1,
+                R.drawable.img_descanso,
                 true,
-                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+                Localizacao.BLOCO_A_TERREO
         ));
 
         TODAS_AS_SALAS.add(new Sala(
@@ -181,7 +192,7 @@ public class SalaRepository {
                 R.drawable.ic_servidor,
                 R.drawable.img_servidores,
                 false,
-                Localizacao.BLOCO_A_PRIMEIRO_ANDAR
+                Localizacao.BLOCO_B_PRIMEIRO_ANDAR
         ));
 
         TODAS_AS_SALAS.add(new Sala(
