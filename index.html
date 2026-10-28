@@ -1,362 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MapsIF — Tour virtual 360° do IFPB Santa Luzia</title>
-<meta name="description" content="MapsIF é um tour virtual em 360° pelo campus do IFPB Santa Luzia. Baixe o APK e veja como instalar, direto do celular.">
-<link rel="icon" type="image/svg+xml" href="pages/img/geral/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="pages/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MapsIF — O campus do IFPB Santa Luzia em 360°</title>
+<meta name="description" content="Aplicativo Android para explorar o IFPB Santa Luzia em 360°. Baixe o MapsIF.">
+<link rel="icon" href="pages/img/geral/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<script>try{var t=localStorage.getItem("mapsif-tema");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"claro":"escuro";document.documentElement.dataset.tema=t}catch(e){document.documentElement.dataset.tema="escuro"}</script>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="espera">
+<div id="load" aria-label="Carregando"><img id="lf" src="pages/img/geral/logo-mapsif-branca.svg" alt=""><video id="lv" muted playsinline autoplay loop preload="auto"></video><div class="bar"><i id="lb"></i></div></div>
 
-<a class="somente-leitor-tela" href="#conteudo">Pular para o conteúdo</a>
+<nav>
+ <a href="#topo"><img id="lg" src="pages/img/geral/logo-mapsif-branca.svg" alt="MapsIF"></a>
+ <a class="lk mono" href="#recursos">Recursos</a><a class="lk mono" href="#tour">Tour 360°</a><a class="lk mono" href="#app">O app</a><a class="lk mono" href="#devs">Equipe</a>
+ <a class="lk mono" href="pages/como-instalar.html">Como instalar</a>
+ <span class="sp"></span>
+ <button id="tm" class="mono" aria-label="Alternar tema claro e escuro">◐ Tema</button>
+ <a class="go mono" href="#download">Baixar app</a>
+</nav>
 
-<header class="cabecalho">
-  <a href="index.html" class="marca">
-    <img src="pages/img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
-    <img src="pages/img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
-  </a>
+<aside id="ind" aria-label="Seções"><div class="tk"></div><div class="ps" id="ps"><b id="pc">0%</b></div>
+ <a class="il" href="#recursos">RECURSOS</a><a class="il" href="#tour">TOUR 360°</a><a class="il" href="#app">O APP</a><a class="il" href="#devs">EQUIPE</a><a class="il" href="#download">BAIXAR</a></aside>
 
-  <nav class="nav-principal" aria-label="Navegação principal">
-    <a href="#sobre">Sobre</a>
-    <a href="#campus">O campus</a>
-    <a href="pages/como-instalar.html">Como instalar</a>
-    <a href="#referencias">Referências</a>
-  </nav>
-
-  <div class="acoes-cabecalho">
-    <button class="botao-tema" data-botao-tema aria-label="Alternar entre modo claro e escuro">
-      <i data-lucide="sun" class="icone-sol"></i>
-      <i data-lucide="moon" class="icone-lua"></i>
-    </button>
-    <button class="botao-menu" data-botao-menu aria-expanded="false" aria-controls="menu-movel" aria-label="Abrir menu de navegação">
-      <i data-lucide="menu"></i>
-    </button>
-  </div>
-
-  <nav id="menu-movel" class="menu-movel" data-menu-movel aria-label="Navegação móvel">
-    <a href="#sobre">Sobre</a>
-    <a href="#campus">O campus</a>
-    <a href="pages/como-instalar.html">Como instalar</a>
-    <a href="#referencias">Referências</a>
-  </nav>
+<header class="hero" id="topo">
+ <div class="orb o3"></div><div class="orb o2"></div><div class="orb o1"></div>
+ <div class="tilt" id="tilt"></div>
+ <div class="tx">
+  <h1 id="tt" aria-label="MapsIF"></h1>
+  <p class="sub">O campus em <em>360 graus</em></p>
+  <p class="d">Explore o IFPB Santa Luzia pelo celular: escolha o bloco, o andar e entre na sala.</p>
+  <a class="btn f mono" href="#download">Baixar para Android</a> <a class="btn mono" href="#tour">Testar o tour</a>
+  <p class="mono n">Android 8+ · Gratuito · Projeto de conclusão de curso</p>
+ </div>
 </header>
 
-<main id="conteudo">
+<div class="mq mono" aria-hidden="true"><div id="mq"></div></div>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="container hero__grade">
-      <div>
-        <span class="hero__etiqueta">
-          <i data-lucide="map-pin"></i>
-          IFPB Campus Santa Luzia
-        </span>
-        <h1 class="fs-h1">
-          <span class="linha"><span>Conheça o campus do IFPB Santa Luzia</span></span>
-          <span class="linha"><span>antes mesmo de chegar lá.</span></span>
-        </h1>
-        <p class="hero__sub">
-          O MapsIF é um tour virtual em 360° pelos blocos e ambientes do campus Santa Luzia,
-          feito para quem nunca esteve lá conhecer o espaço direto do celular — sem precisar
-          de conta em loja de aplicativos.
-        </p>
-        <div class="grupo-botoes hero__cta">
-          <!--
-            TODO (Lucas/Iasmim): troque o href abaixo pelo link real assim que a Release
-            existir no GitHub. Se o arquivo do APK sempre se chamar "mapsif.apk" em toda
-            release nova, este link "latest/download" nunca precisa ser trocado de novo.
-          -->
-          <a class="botao botao--primario" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk" data-link-apk>
-            <i data-lucide="download"></i> Baixar o APK
-          </a>
-          <a class="botao botao--secundario" href="pages/como-instalar.html">
-            <i data-lucide="list-checks"></i> Ver como instalar
-          </a>
-        </div>
-        <p style="margin-top:1.1rem; font-size:0.85rem; color:var(--cor-tinta-suave);">
-          Arquivo .apk · Requer Android 8.0 (Oreo) ou superior
-        </p>
-      </div>
+<section id="recursos">
+ <div class="hd mono r"><span>01 / Recursos</span><span>Feito no campus</span></div>
+ <h2 class="r">Entre em qualquer sala <em>sem sair</em> do lugar.</h2>
+ <p class="lede r">Cada ambiente tem foto em 360°, descrição e um botão para abrir o visualizador.</p>
+ <div class="gr">
+  <article class="cd r" style="--x:0%"><div class="mono"><span>Bloco A</span><span>01</span></div><div class="im" style="background-image:url(assets/panoramas/corredor_blocos.jpg)"></div><h3>Bloco A</h3><p>Térreo e primeiro andar, com a lista de ambientes de cada piso.</p></article>
+  <article class="cd r" style="--x:50%;--i:1"><div class="mono"><span>Bloco B</span><span>02</span></div><div class="im" style="background-image:url(assets/panoramas/lab_informatica_1.jpg)"></div><h3>Bloco B</h3><p>Laboratórios, biblioteca, refeitório e auditório.</p></article>
+  <article class="cd r" style="--x:100%;--i:2"><div class="mono"><span>Explorar mais</span><span>03</span></div><div class="im" style="background-image:url(assets/panoramas/inicio_trilha.jpg)"></div><h3>Explorar mais</h3><p>Trilha, sala de convivência e outros espaços fora dos blocos.</p></article>
+ </div>
+</section>
 
-      <div class="moldura-panorama">
-        <div class="moldura-panorama__quadro">
-          <div id="visualizador-360" class="visualizador-360"></div>
-          <div class="mira-canto mira-canto--tl"></div>
-          <div class="mira-canto mira-canto--tr"></div>
-          <div class="mira-canto mira-canto--bl"></div>
-          <div class="mira-canto mira-canto--br"></div>
-          <div class="selo-cena">
-            <span class="selo-cena__ponto"></span>
-            <span>Prévia 360° (exemplo)</span>
-          </div>
-        </div>
-        <div class="legenda-panorama">
-          <span>Arraste para olhar ao redor</span>
-          <span>Prévia com fotos de exemplo</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="tour">
+ <div class="hd mono r"><span>02 / Tour 360°</span><span>Arraste para olhar ao redor</span></div>
+ <h2 class="r">Teste o visualizador <em>agora</em>.</h2>
+ <p class="lede r">É o mesmo visualizador que roda dentro do app.</p>
+ <div class="chips r" id="chips"></div><div id="pano" class="r"></div>
+</section>
 
-  <!-- ===================== SOBRE ===================== -->
-  <section id="sobre" class="secao">
-    <div class="container sobre__grade">
-      <div class="sobre__texto">
-        <h2>Sobre o projeto</h2>
-        <p>
-          O MapsIF é um projeto criado por alunos do curso técnico de Informática
-          do IFPB Campus Santa Luzia (turma 2024–2026). A proposta é simples: levar
-          quem ainda não conhece o campus por um passeio em 360°, ambiente por
-          ambiente, bloco por bloco.
-        </p>
-        <p>
-          O aplicativo foi desenvolvido em Java para Android, usando o Pannellum para os
-          visualizadores 360° dentro de uma WebView, e organiza o tour seguindo a mesma
-          divisão física do campus: Bloco A e Bloco B, cada um com seus andares e ambientes.
-        </p>
-      </div>
+<section id="app">
+ <div class="hd mono r"><span>03 / O app</span><span>Telas</span></div>
+ <h2 class="r">Simples de usar, <em>bonito</em> de ver.</h2>
+ <div class="fones" style="margin-top:3rem">
+  <div class="fone r"><span class="mono">Menu principal</span><img class="cla" src="assets/app/claro/tela-1.png" alt="Menu principal do MapsIF (modo claro)" onerror="this.remove()"><img class="esc" src="assets/app/escuro/tela-1.png" alt="Menu principal do MapsIF (modo escuro)" onerror="this.remove()"></div>
+  <div class="fone r" style="--i:1"><span class="mono">Ambientes</span><img class="cla" src="assets/app/claro/tela-2.png" alt="Lista de ambientes (modo claro)" onerror="this.remove()"><img class="esc" src="assets/app/escuro/tela-2.png" alt="Lista de ambientes (modo escuro)" onerror="this.remove()"></div>
+  <div class="fone r" style="--i:2"><span class="mono">Detalhe</span><img class="cla" src="assets/app/claro/tela-3.png" alt="Detalhe do ambiente (modo claro)" onerror="this.remove()"><img class="esc" src="assets/app/escuro/tela-3.png" alt="Detalhe do ambiente (modo escuro)" onerror="this.remove()"></div>
+  <div class="fone r" style="--i:3"><span class="mono">Visualizador 360°</span><img class="cla" src="assets/app/claro/tela-4.png" alt="Visualizador 360 graus (modo claro)" onerror="this.remove()"><img class="esc" src="assets/app/escuro/tela-4.png" alt="Visualizador 360 graus (modo escuro)" onerror="this.remove()"></div>
+ </div>
+ <div class="vid r" style="margin-top:4rem"><video controls preload="metadata" poster="assets/app/capa-video.jpg"><source src="assets/video/demo.mp4" type="video/mp4"></video></div>
+</section>
 
-<!--
-         ATENÇÃO Lucas: o README.md usa "Iasmim Anahí Alves Souza" e o AGENTS.md usa
-         "Iasmim Anahí Alves Silva" — usei "Silva" abaixo (AGENTS.md). Confirme qual
-         sobrenome está correto e ajuste o texto se precisar.
-       -->
-       <div class="site-info">
-         <p>Este projeto também possui uma versão web acessível em: <a href="https://macedo-hub.github.io/mapsif/" target="_blank">https://macedo-hub.github.io/mapsif/</a></p>
-       </div>
-       <div class="placa-lista" aria-label="Equipe do projeto">
-        <div class="placa">
-          <img class="placa__foto" src="pages/img/equipe/lucas.webp" alt="Foto de Lucas Emanuel Nóbrega de Macêdo">
-          <div>
-            <p class="placa__nome">Lucas Emanuel Nóbrega de Macêdo</p>
-            <p class="placa__funcao">Desenvolvimento Android</p>
-          </div>
-          <span class="placa__sala">DEV</span>
-        </div>
-        <div class="placa">
-          <img class="placa__foto" src="pages/img/equipe/iasmim.webp" alt="Foto de Iasmim Anahí Alves Silva">
-          <div>
-            <p class="placa__nome">Iasmim Anahí Alves Silva</p>
-            <p class="placa__funcao">Desenvolvimento Android &amp; UI/UX</p>
-          </div>
-          <span class="placa__sala">DEV</span>
-        </div>
-        <div class="placa">
-          <img class="placa__foto" src="pages/img/equipe/alexandre.webp" alt="Foto de Dr. Antonio Alexandre Moura Costa">
-          <div>
-            <p class="placa__nome">Dr. Antonio Alexandre Moura Costa</p>
-            <p class="placa__funcao">Professor orientador</p>
-          </div>
-          <span class="placa__sala">ORIENT.</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===================== CAMPUS ===================== -->
-  <section id="campus" class="secao secao--alt">
-    <div class="container">
-      <div class="cabecalho-secao">
-        <h2>Como o campus está organizado</h2>
-        <p>O tour segue a mesma divisão do campus físico: dois blocos ligados por um corredor, cada um com sua própria vocação.</p>
-      </div>
+<section id="devs">
+ <div class="hd mono r"><span>04 / Equipe</span><span>IFPB Santa Luzia · 2024–2026</span></div>
+ <h2 class="r">Quem <em>construiu</em>.</h2>
+ <div class="gr" style="margin-top:3rem">
+  <article class="dev r"><img src="pages/img/equipe/lucas.webp" alt="Lucas Emanuel"><h3>Lucas Emanuel</h3><p>Desenvolvimento Android</p></article>
+  <article class="dev r" style="--i:1"><img src="pages/img/equipe/iasmim.webp" alt="Iasmim Anahí"><h3>Iasmim Anahí</h3><p>Desenvolvimento Android e UI/UX</p></article>
+  <article class="dev r" style="--i:2"><img src="pages/img/equipe/alexandre.webp" alt="Alexandre Costa"><h3>Prof. Dr. Alexandre Costa</h3><p>Orientador</p></article>
+ </div>
+</section>
+<section id="download">
+ <div class="dl r">
+  <div class="mono" style="color:var(--tx2)">05 / Baixar</div>
+  <h2>Leve o campus <em>no bolso</em>.</h2>
+  <p class="lede" style="margin-inline:auto">Baixe o APK, abra e toque em “Teste agora!”.</p>
+  <div class="bt"><a class="btn f mono" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk">Baixar APK</a><a class="btn mono" href="pages/como-instalar.html">Como instalar</a><a class="btn mono" href="https://github.com/macedo-hub/mapsif">Código no GitHub</a></div>
+ </div>
+</section>
 
-      <div class="diretorio">
-        <div class="predio">
-          <div class="predio__topo">
-            <h3>Bloco A</h3>
-            <span>Salas de aula e administração</span>
-          </div>
-          <div class="andar aberto">
-            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="true">
-              <span>Térreo</span>
-              <i data-lucide="chevron-down"></i>
-            </button>
-            <div class="andar__conteudo">
-              <ul class="andar__lista">
-                <li>Salas de aula</li>
-                <li>Direção e administração</li>
-              </ul>
-            </div>
-          </div>
-          <div class="andar">
-            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="false">
-              <span>1º andar</span>
-              <i data-lucide="chevron-down"></i>
-            </button>
-            <div class="andar__conteudo">
-              <ul class="andar__lista">
-                <li>NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas</li>
-                <li>Copa e refeitório</li>
-                <li>Sala dos professores</li>
-                <li>Laboratório de Informática 1</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<footer class="mono"><span>© 2026 MapsIF · IFPB Campus Santa Luzia</span><span>Visualizador: Pannellum</span></footer>
 
-        <div class="predio">
-          <div class="predio__topo">
-            <h3>Bloco B</h3>
-            <span>Biblioteca e laboratórios</span>
-          </div>
-          <div class="andar aberto">
-            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="true">
-              <span>Térreo</span>
-              <i data-lucide="chevron-down"></i>
-            </button>
-            <div class="andar__conteudo">
-              <ul class="andar__lista">
-                <li>Biblioteca</li>
-                <li>Laboratório de Energias Renováveis</li>
-              </ul>
-            </div>
-          </div>
-          <div class="andar">
-            <button class="andar__cabecalho" data-andar-cabecalho aria-expanded="false">
-              <span>1º andar</span>
-              <i data-lucide="chevron-down"></i>
-            </button>
-            <div class="andar__conteudo">
-              <ul class="andar__lista">
-                <li>Laboratório de Informática 2</li>
-                <li>Auditório</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},H=document.documentElement,B=document.body;
+function tema(){return H.dataset.tema==="claro"?"claro":"escuro"}
+function logos(){var s="pages/img/geral/logo-mapsif-"+(tema()==="claro"?"verde":"branca")+".svg";$("#lg").src=s;var f=$("#lf");if(f)f.src=s}
+logos();
+$("#tm").onclick=function(){var n=tema()==="claro"?"escuro":"claro";H.dataset.tema=n;try{localStorage.setItem("mapsif-tema",n)}catch(e){}logos()};
 
-  <!-- ===================== COMO INSTALAR (teaser) ===================== -->
-  <section id="como-instalar" class="secao">
-    <div class="container">
-      <div class="teaser-instalar">
-        <div>
-          <h2>Instalar é simples — leva menos de dois minutos</h2>
-          <p>
-            Como o MapsIF ainda não está na Play Store, o Android pede uma confirmação
-            extra antes de instalar. Preparamos um passo a passo com print de cada etapa.
-          </p>
-          <ul class="lista-passos-mini">
-            <li><span class="numero">1</span> Baixe o arquivo .apk pelo botão</li>
-            <li><span class="numero">2</span> Autorize a instalação de fontes desconhecidas</li>
-            <li><span class="numero">3</span> Confirme o aviso do Play Protect</li>
-            <li><span class="numero">4</span> Abra o MapsIF e comece o tour</li>
-          </ul>
-        </div>
-        <div class="grupo-botoes">
-          <a class="botao botao--secundario" href="pages/como-instalar.html">
-            <i data-lucide="list-checks"></i> Ver passo a passo completo
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* tela de carregamento: mínimo 3 s, máximo 10 s */
+var MIN=3000,MAX=10000,t0=performance.now(),ok=false,v=$("#lv");
+v.src="assets/video/logo-"+tema()+".mp4";
+v.onerror=function(){v.remove()};v.play&&v.play().catch(function(){});
+Promise.all([new Promise(function(r){document.readyState==="complete"?r():addEventListener("load",r)}),document.fonts?document.fonts.ready:0]).then(function(){ok=true});
+var iv=setInterval(function(){var e=performance.now()-t0;$("#lb").style.width=Math.min(100,e/MIN*100)+"%";
+ if((ok&&e>=MIN)||e>=MAX){clearInterval(iv);$("#load").classList.add("sai");B.classList.remove("espera");B.classList.add("pronto");setTimeout(function(){$("#load").remove()},1100)}},80);
 
-  <!-- ===================== REFERÊNCIAS ===================== -->
-  <section id="referencias" class="secao secao--alt">
-    <div class="container">
-      <div class="cabecalho-secao">
-        <h2>Tecnologias e referências</h2>
-        <p>Ferramentas e bibliotecas usadas na construção do MapsIF.</p>
-      </div>
+/* título e anel 3D */
+$("#tt").innerHTML="MAPSIF".split("").map(function(c,i){return'<span style="--i:'+i+'">'+c+"</span>"}).join("");
+var P=[["auditorio.jpg","Auditório"],["biblioteca.jpg","Biblioteca"],["corredor_blocos.jpg","Corredor dos blocos"],["frente_escola.jpg","Frente da escola"],["inicio_trilha.jpg","Início da trilha"],["lab_biologia.jpg","Lab. de Biologia"],["lab_informatica_1.jpg","Lab. de Informática 1"],["lab_informatica_2.jpeg","Lab. de Informática 2"],["lab_quimica.jpg","Lab. de Química"],["refeitorio.jpg","Refeitório"],["sala_aula.jpg","Sala de aula"],["sala_descanso.jpg","Sala de descanso"],["sala_diretora_ensino.jpg","Diretora de Ensino"],["sala_diretor_geral.jpg","Diretor Geral"],["sala_energias_renovaveis.jpg","Energias Renováveis"],["sala_neabi.jpg","NEABI"],["sala_professores_a.jpg","Professores (A)"],["sala_servidor.jpg","Sala do servidor"]],fraco=(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4,C=[[2,8,26,40],[15,58,20,-60],[3,74,22,80],[24,12,16,-120],[33,80,18,20],[62,82,20,60],[77,70,24,-40],[83,46,18,90],[69,8,20,-80],[87,12,22,50],[52,3,14,-150],[9,35,15,-100],[91,74,15,-110],[46,87,13,-140]],tl0=$("#tilt");
+if(fraco||innerWidth<700)C=C.slice(0,fraco?6:7);
+function mini(f){return"assets/panoramas/mini/"+f.replace(/\.jpe?g$/,".jpg")}
+var cs=[],HW=0,HH=0,vel=0,t00=0,last=0,lastY=0,rodando=false,rid=0,reduz=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function medir(){var r=$("#topo").getBoundingClientRect();HW=r.width;HH=r.height}
+addEventListener("resize",function(){medir();cs.forEach(pos)});
+function pos(c){c.d.style.transform="translate3d("+(Math.cos(c.th-(1-c.e)*1.6)*c.k*HW*.44*c.e).toFixed(1)+"px,"+(Math.sin(c.th-(1-c.e)*1.6)*c.k*HH*.4*c.e).toFixed(1)+"px,"+c.z+"px) scale("+(.35+.65*c.e).toFixed(3)+")"}
+function quadro(t){var dt=Math.min(.05,(t-last)/1000)||.016;last=t;var dy=scrollY-lastY;lastY=scrollY;
+ var alvo=.22+Math.max(-1.5,Math.min(1.5,dy/dt*.0007));vel+=(alvo-vel)*Math.min(1,dt*5);
+ var el=t-t00;cs.forEach(function(c){c.e=reduz?1:1-Math.pow(1-Math.max(0,Math.min(1,(el-c.t0)/1400)),3);c.th+=vel*c.f*dt;pos(c)});if(rodando)rid=requestAnimationFrame(quadro)}
+function gira(on){if(reduz||!cs.length)return;if(on&&!rodando){rodando=true;last=performance.now();lastY=scrollY;rid=requestAnimationFrame(quadro)}else if(!on){rodando=false;cancelAnimationFrame(rid)}}
+var iv2=setInterval(function(){if(!B.classList.contains("pronto"))return;clearInterval(iv2);medir();t00=performance.now();
+C.forEach(function(c,i){var p=P[(i*5)%P.length],d=document.createElement("div");d.className="mc";d.style.cssText="--w:"+c[2]+"vmin;--z:"+c[3]+"px;--i:"+i;d.innerHTML='<div class="pv"></div><b>'+p[1]+' · 360°</b>';tl0.appendChild(d);var dx=c[0]-50,dy=c[1]-50,o={d:d,th:Math.atan2(dy/40,dx/44),k:Math.min(1,Math.max(.58,Math.hypot(dx/44,dy/40))),z:c[3],f:.85+(i%5)*.07,e:0,t0:i*90};cs.push(o);pos(o);
+ function ok(u){d.firstChild.style.backgroundImage="url('"+u+"')";d.classList.add("ok")}
+ setTimeout(function(){var im=new Image(),u=mini(p[0]);
+  im.onload=function(){(im.decode?im.decode():Promise.resolve()).then(function(){ok(u)},function(){ok(u)})};
+  im.onerror=function(){var j=new Image(),f="assets/panoramas/"+p[0];j.onload=function(){ok(f)};j.src=f};im.src=u},i*130)});gira(true)},200);
+$("#mq").innerHTML=Array(2).fill(["Tour virtual 360°","Bloco A","Bloco B","Térreo e 1º andar","Laboratórios","Biblioteca","Auditório","Refeitório","Trilha","Android"].map(function(t){return"<span>"+t+"</span>"}).join("")).join("");
+var tx=0,ty=0,cx=0,cy=0,raf=0;
+function passo(){cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;tl0.style.transform="rotateY("+cx*14+"deg) rotateX("+-cy*10+"deg)";raf=(Math.abs(tx-cx)>.001||Math.abs(ty-cy)>.001)?requestAnimationFrame(passo):0}
+if(!fraco&&matchMedia("(hover:hover)").matches)addEventListener("mousemove",function(e){tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;if(!raf)raf=requestAnimationFrame(passo)});
 
-      <div class="lista-tecnologias">
-        <div class="tecnologia">
-          <i data-lucide="cpu"></i>
-          <div><h4>Java + Android SDK</h4><p>SDK alvo 37, mínimo 26 (Android 8.0).</p></div>
-        </div>
-        <div class="tecnologia">
-          <i data-lucide="view"></i>
-          <div><h4>Pannellum</h4><p>Biblioteca JS/WebGL para os visualizadores 360°, embutida via WebView.</p></div>
-        </div>
-        <div class="tecnologia">
-          <i data-lucide="layout-grid"></i>
-          <div><h4>Material Design Components</h4><p>Componentes de interface usados no aplicativo.</p></div>
-        </div>
-        <div class="tecnologia">
-          <i data-lucide="shapes"></i>
-          <div><h4>Lucide Icons</h4><p>Conjunto de ícones usado tanto no app quanto neste site.</p></div>
-        </div>
-        <div class="tecnologia">
-          <i data-lucide="image"></i>
-          <div><h4>Glide</h4><p>Carregamento eficiente de imagens dentro do app.</p></div>
-        </div>
-        <div class="tecnologia">
-          <i data-lucide="package"></i>
-          <div><h4>Gradle Version Catalog</h4><p>Gerenciamento centralizado de dependências.</p></div>
-        </div>
-      </div>
+/* revelar ao rolar + indicador lateral */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("v");io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".r").forEach(function(el){io.observe(el)});
+var secs=["recursos","tour","app","devs","download"],els=secs.map(function(x){return document.getElementById(x)}),ils=[].slice.call(document.querySelectorAll("#ind a.il")),ind=$("#ind"),tops=[];
+function medirS(){tops=els.map(function(e){return e.getBoundingClientRect().top+scrollY})}
+function cl(v){return Math.max(0,Math.min(1,v))}
+function ez(v){return 1-Math.pow(1-v,3)}
+function rolar(){var m=H.scrollHeight-innerHeight,pr=m?scrollY/m:0,h=ind.clientHeight,vh=innerHeight,N=ils.length,q=tops.map(function(t){return ez(cl((vh-(t-scrollY))/(vh-140)))});
+ q[N-1]=Math.max(q[N-1],ez(cl((pr-.94)/.06)));
+ $("#ps").style.top=(pr*(h-4))+"px";$("#pc").textContent=Math.round(pr*100)+"%";
+ ils.forEach(function(a,i){var out=i<N-1?q[i+1]:0,yb=h-44-(N-1-i)*28,y=yb+(14-yb)*q[i]-out*60;
+  a.style.transform="translateY("+y.toFixed(1)+"px) scale("+(1+.7*q[i]).toFixed(3)+")";a.style.opacity=((.5+.5*q[i])*(1-out)).toFixed(3);a.classList.toggle("on",q[i]>.6&&out<.5)})}
+medirS();addEventListener("resize",function(){medirS();rolar()});addEventListener("load",function(){medirS();rolar()});
+addEventListener("scroll",rolar,{passive:true});rolar();
 
-      <div class="grupo-botoes">
-        <a class="botao botao--secundario" href="https://github.com/macedo-hub/mapsif" target="_blank" rel="noopener">
-          <i data-lucide="github"></i> Ver código no GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ===================== RODAPÉ ===================== -->
-<footer class="rodape">
-  <div class="container">
-    <div class="rodape__grade">
-      <div>
-        <div class="rodape__marca marca">
-          <img src="pages/img/geral/logo-mapsif-verde.svg" alt="MapsIF" class="marca__logo marca__logo--claro">
-          <img src="pages/img/geral/logo-mapsif-branca.svg" alt="MapsIF" class="marca__logo marca__logo--escuro">
-        </div>
-        <p class="rodape__texto">
-          Tour virtual 360° do campus do IFPB Santa Luzia, criado por alunos do
-          curso técnico de Informática (turma 2024–2026).
-        </p>
-      </div>
-      <ul class="rodape__lista">
-        <li><a href="#sobre">Sobre o projeto</a></li>
-        <li><a href="#campus">O campus</a></li>
-        <li><a href="pages/como-instalar.html">Como instalar</a></li>
-        <li><a href="https://github.com/macedo-hub/mapsif" target="_blank" rel="noopener">Repositório no GitHub</a></li>
-      </ul>
-    </div>
-    <div class="rodape__base">
-      <span>© <span data-ano-atual>2026</span> MapsIF — IFPB Campus Santa Luzia</span>
-      <span>Orientação: Dr. Antonio Alexandre Moura Costa</span>
-    </div>
-  </div>
-</footer>
-
-<!-- Mostrador de rotação fixo — decorativo, acompanha a rolagem da página -->
-<div class="mostrador-rotacao" aria-hidden="true">
-  <div class="mostrador-rotacao__fundo"></div>
-  <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="var(--cor-linha)" stroke-width="1.4" stroke-linecap="round">
-      <line x1="29" y1="3" x2="29" y2="7"/>
-      <line x1="47.38" y1="10.62" x2="43.85" y2="14.15"/>
-      <line x1="55" y1="29" x2="50" y2="29"/>
-      <line x1="47.38" y1="47.38" x2="43.85" y2="43.85"/>
-      <line x1="29" y1="55" x2="29" y2="50"/>
-      <line x1="10.62" y1="47.38" x2="14.15" y2="43.85"/>
-      <line x1="3" y1="29" x2="8" y2="29"/>
-      <line x1="10.62" y1="10.62" x2="14.15" y2="14.15"/>
-    </g>
-    <g class="mostrador-rotacao__agulha" data-agulha>
-      <line x1="29" y1="29" x2="29" y2="11" stroke="var(--cor-primaria)" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="29" cy="29" r="2.6" fill="var(--cor-primaria)"/>
-    </g>
-  </svg>
-  <span class="mostrador-rotacao__grau" data-leitura-grau>000°</span>
-</div>
-
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js" defer></script>
-<script src="pages/js/main.js" defer></script>
+/* visualizador 360 */
+var sc={};P.forEach(function(p){sc[p[0]]={type:"equirectangular",panorama:"assets/panoramas/"+p[0],title:p[1]}});
+var pv=window.pannellum&&pannellum.viewer("pano",{default:{firstScene:P[0][0],sceneFadeDuration:800,autoLoad:true,autoRotate:-3},scenes:sc});
+$("#chips").innerHTML=P.map(function(p,i){return'<button class="mono'+(i?'':' on')+'" data-s="'+p[0]+'">'+p[1]+'</button>'}).join("");
+$("#chips").onclick=function(e){var b=e.target.closest("button");if(!b||!pv)return;pv.loadScene(b.dataset.s);this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)})};
+new IntersectionObserver(function(e){B.classList.toggle("pausa",!e[0].isIntersecting);gira(e[0].isIntersecting)}).observe($("#topo"));
+})();
+</script>
 </body>
 </html>
