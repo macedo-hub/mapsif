@@ -93,6 +93,7 @@
 <footer class="mono"><span>© 2026 MapsIF · IFPB Campus Santa Luzia</span><span>Visualizador: Pannellum</span></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="assets/js/indicador.js"></script>
 <script>
 (function(){
 var $=function(s){return document.querySelector(s)},H=document.documentElement,B=document.body;
@@ -123,7 +124,7 @@ function quadro(t){var dt=Math.min(.05,(t-last)/1000)||.016;last=t;var dy=scroll
  var el=t-t00;cs.forEach(function(c){c.e=reduz?1:1-Math.pow(1-Math.max(0,Math.min(1,(el-c.t0)/1400)),3);c.th+=vel*c.f*dt;pos(c)});if(rodando)rid=requestAnimationFrame(quadro)}
 function gira(on){if(reduz||!cs.length)return;if(on&&!rodando){rodando=true;last=performance.now();lastY=scrollY;rid=requestAnimationFrame(quadro)}else if(!on){rodando=false;cancelAnimationFrame(rid)}}
 var iv2=setInterval(function(){if(!B.classList.contains("pronto"))return;clearInterval(iv2);medir();t00=performance.now();
-C.forEach(function(c,i){var p=P[(i*5)%P.length],d=document.createElement("div");d.className="mc";d.style.cssText="--w:"+c[2]+"vmin;--z:"+c[3]+"px;--i:"+i;d.innerHTML='<div class="pv"></div><b>'+p[1]+' · 360°</b>';tl0.appendChild(d);var dx=c[0]-50,dy=c[1]-50,o={d:d,th:Math.atan2(dy/40,dx/44),k:Math.min(1,Math.max(.58,Math.hypot(dx/44,dy/40))),z:c[3],f:.85+(i%5)*.07,e:0,t0:i*90};cs.push(o);pos(o);
+C.forEach(function(c,i){var p=P[(i*5)%P.length],d=document.createElement("div");d.className="mc";d.style.cssText="--w:"+c[2]+"vmin;--z:"+c[3]+"px;--i:"+i;d.innerHTML='<div class="pv"></div><b>'+p[1]+' · 360°</b>';tl0.appendChild(d);var dx=c[0]-50,dy=c[1]-50,o={d:d,th:Math.atan2(dy/40,dx/44),k:Math.min(1,Math.max(innerWidth<700?.82:.58,Math.hypot(dx/44,dy/40))),z:c[3],f:.85+(i%5)*.07,e:0,t0:i*90};cs.push(o);pos(o);
  function ok(u){d.firstChild.style.backgroundImage="url('"+u+"')";d.classList.add("ok")}
  setTimeout(function(){var im=new Image(),u=mini(p[0]);
   im.onload=function(){(im.decode?im.decode():Promise.resolve()).then(function(){ok(u)},function(){ok(u)})};
@@ -136,17 +137,7 @@ if(!fraco&&matchMedia("(hover:hover)").matches)addEventListener("mousemove",func
 /* revelar ao rolar + indicador lateral */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("v");io.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll(".r").forEach(function(el){io.observe(el)});
-var secs=["recursos","tour","app","devs","download"],els=secs.map(function(x){return document.getElementById(x)}),ils=[].slice.call(document.querySelectorAll("#ind a.il")),ind=$("#ind"),tops=[];
-function medirS(){tops=els.map(function(e){return e.getBoundingClientRect().top+scrollY})}
-function cl(v){return Math.max(0,Math.min(1,v))}
-function ez(v){return 1-Math.pow(1-v,3)}
-function rolar(){var m=H.scrollHeight-innerHeight,pr=m?scrollY/m:0,h=ind.clientHeight,vh=innerHeight,N=ils.length,q=tops.map(function(t){return ez(cl((vh-(t-scrollY))/(vh-140)))});
- q[N-1]=Math.max(q[N-1],ez(cl((pr-.94)/.06)));
- $("#ps").style.top=(pr*(h-4))+"px";$("#pc").textContent=Math.round(pr*100)+"%";
- ils.forEach(function(a,i){var out=i<N-1?q[i+1]:0,yb=h-44-(N-1-i)*28,y=yb+(14-yb)*q[i]-out*60;
-  a.style.transform="translateY("+y.toFixed(1)+"px) scale("+(1+.7*q[i]).toFixed(3)+")";a.style.opacity=((.5+.5*q[i])*(1-out)).toFixed(3);a.classList.toggle("on",q[i]>.6&&out<.5)})}
-medirS();addEventListener("resize",function(){medirS();rolar()});addEventListener("load",function(){medirS();rolar()});
-addEventListener("scroll",rolar,{passive:true});rolar();
+indicador(["recursos","tour","app","devs","download"]);
 
 /* visualizador 360 */
 var sc={};P.forEach(function(p){sc[p[0]]={type:"equirectangular",panorama:"assets/panoramas/"+p[0],title:p[1]}});

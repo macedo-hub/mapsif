@@ -19,6 +19,9 @@
  <a class="go mono" href="#baixar">Baixar APK</a>
 </nav>
 
+<aside id="ind" aria-label="Seções"><div class="tk"></div><div class="ps" id="ps"><b id="pc">0%</b></div>
+ <a class="il" href="#passo1">BAIXAR</a><a class="il" href="#passo2">PERMITIR</a><a class="il" href="#passo3">INSTALAR</a><a class="il" href="#passo4">ABRIR</a><a class="il" href="#compilar">COMPILAR</a></aside>
+
 <section class="solo top">
  <div class="hd mono r"><span>Tutorial</span><span>Android 8 ou superior</span></div>
  <h1 class="r" style="font-size:clamp(2.6rem,8vw,6.5rem)">Instale o MapsIF em <em>4 passos</em>.</h1>
@@ -26,13 +29,13 @@
 </section>
 
 <section class="solo" id="baixar" style="padding-top:0">
- <div class="step r"><div><div class="n">01</div><h3>Baixe o APK</h3><p>Toque no botão abaixo pelo celular. Se o navegador avisar que o tipo de arquivo pode ser perigoso, confirme o download.</p><p style="margin-top:1.5rem"><a class="btn f mono" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk">Baixar mapsif.apk</a></p></div><div class="shot r"><span class="mono">Print do passo 1</span><img src="../assets/tutorial/passo-1.png" alt="Baixando o APK" onerror="this.remove()"></div></div>
- <div class="step r"><div><div class="n">02</div><h3>Permita a instalação</h3><p>Abra o arquivo baixado. Se o Android pedir, toque em <em>Configurações</em> e ative a opção de permitir instalar apps desta fonte (navegador ou gerenciador de arquivos).</p></div><div class="shot r"><span class="mono">Print do passo 2</span><img src="../assets/tutorial/passo-2.png" alt="Permitindo a instalação" onerror="this.remove()"></div></div>
- <div class="step r"><div><div class="n">03</div><h3>Toque em Instalar</h3><p>Volte à tela anterior e toque em <em>Instalar</em>. Se o Play Protect avisar sobre app não reconhecido, escolha <em>Instalar mesmo assim</em>.</p></div><div class="shot r"><span class="mono">Print do passo 3</span><img src="../assets/tutorial/passo-3.png" alt="Instalando o app" onerror="this.remove()"></div></div>
- <div class="step r"><div><div class="n">04</div><h3>Abra e explore</h3><p>Abra o MapsIF, escolha o bloco e o andar, toque na sala e entre no tour 360°.</p></div><div class="shot r"><span class="mono">Print do passo 4</span><img src="../assets/tutorial/passo-4.png" alt="Usando o app" onerror="this.remove()"></div></div>
+ <div class="step r" id="passo1"><div><div class="n">01</div><h3>Baixe o APK</h3><p>Toque no botão abaixo pelo celular. Se o navegador avisar que o tipo de arquivo pode ser perigoso, confirme o download.</p><p style="margin-top:1.5rem"><a class="btn f mono" href="https://github.com/macedo-hub/mapsif/releases/latest/download/mapsif.apk">Baixar mapsif.apk</a></p></div><div class="shot r"><span class="mono">Print do passo 1</span><img src="../assets/tutorial/passo-1.png" alt="Baixando o APK" onerror="this.remove()"></div></div>
+ <div class="step r" id="passo2"><div><div class="n">02</div><h3>Permita a instalação</h3><p>Abra o arquivo baixado. Se o Android pedir, toque em <em>Configurações</em> e ative a opção de permitir instalar apps desta fonte (navegador ou gerenciador de arquivos).</p></div><div class="shot r"><span class="mono">Print do passo 2</span><img src="../assets/tutorial/passo-2.png" alt="Permitindo a instalação" onerror="this.remove()"></div></div>
+ <div class="step r" id="passo3"><div><div class="n">03</div><h3>Toque em Instalar</h3><p>Volte à tela anterior e toque em <em>Instalar</em>. Se o Play Protect avisar sobre app não reconhecido, escolha <em>Instalar mesmo assim</em>.</p></div><div class="shot r"><span class="mono">Print do passo 3</span><img src="../assets/tutorial/passo-3.png" alt="Instalando o app" onerror="this.remove()"></div></div>
+ <div class="step r" id="passo4"><div><div class="n">04</div><h3>Abra e explore</h3><p>Abra o MapsIF, escolha o bloco e o andar, toque na sala e entre no tour 360°.</p></div><div class="shot r"><span class="mono">Print do passo 4</span><img src="../assets/tutorial/passo-4.png" alt="Usando o app" onerror="this.remove()"></div></div>
 </section>
 
-<section class="solo" style="padding-top:2rem">
+<section class="solo" id="compilar" style="padding-top:2rem">
  <div class="hd mono r"><span>Para desenvolvedores</span><span>Opcional</span></div>
  <h2 class="r">Prefere <em>compilar</em>?</h2>
  <p class="lede r">Clone o repositório e gere o APK de depuração com o Gradle.</p>
@@ -52,5 +55,7 @@ document.getElementById("tm").onclick=function(){var n=tema()==="claro"?"escuro"
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("v");io.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll(".r").forEach(function(el){io.observe(el)})})();
 </script>
+<script src="../assets/js/indicador.js"></script>
+<script>indicador(["passo1","passo2","passo3","passo4","compilar"])</script>
 </body>
 </html>
